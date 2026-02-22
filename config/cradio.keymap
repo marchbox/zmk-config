@@ -5,6 +5,7 @@
 // Layout: Colemak-DH with home row mods
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
@@ -12,7 +13,6 @@
 #define SYM 1
 #define MSE 2
 #define NAV 3
-#define SYS 4
 
 #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
@@ -144,6 +144,24 @@
             bindings = <&mmv MOVE_RIGHT>, <&msc SCRL_LEFT>;
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
+        bt0_mm: bt0_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0>, <&bt BT_DISC 0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        bt1_mm: bt1_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1>, <&bt BT_DISC 1>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        bt2_mm: bt2_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2>, <&bt BT_DISC 2>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
 
         // Tap dance: screenshot
         // Tap: Cmd+Ctrl+Shift+4 (screenshot to clipboard)
@@ -219,7 +237,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │  , <     │  . >     │  ’       │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp LS(LA(RBKT))
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp BSPC   &lht MSE SPACE &lht SYM SPACE &lht SYS ESC
+                                            &kp BSPC   &lht MSE SPACE &lht SYM SPACE &kp ESC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -244,14 +262,14 @@
         mouse_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │ PREV     │   │ VOL UP   │          │ MS UP    │          │          │
-            &none      &none      &none      &none     &kp C_PREV    &kp C_VOL_UP &none     &mmu_mm    &none      &none
+        //│BOOTLOADER│          │          │          │ PREV     │   │ VOL UP   │          │ MS UP    │          │ BT Clear │
+          &bootloader  &none      &none      &none     &kp C_PREV    &kp C_VOL_UP &none     &mmu_mm    &none      &bt BT_CLR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ LSHIFT   │ LALT     │ LCTRL    │ LGUI     │ PLAY     │   │ MUTE     │ MS LEFT  │ MS DOWN  │ MS RIGHT │          │
             &kp LSHFT  &kp LALT   &kp LCTRL  &kp LGUI  &kp C_PP      &kp C_MUTE &mml_mm    &mmd_mm    &mmr_mm    &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │ RCLICK   │ SPACE    │ LCLICK   │ NEXT     │   │ VOL DN   │          │          │          │          │
-            &none     &mkp RCLK  &kp SPACE  &mkp LCLK &kp C_NEXT   &kp C_VOL_DN &none      &none      &none      &none
+        //│          │ RCLICK   │ SPACE    │ LCLICK   │ NEXT     │   │ VOL DN   │          │   BT 0   │   BT 1   │   BT 2   │
+            &none     &mkp RCLK  &kp SPACE  &mkp LCLK &kp C_NEXT   &kp C_VOL_DN &none      &bt0_mm    &bt1_mm    &bt2_mm
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &none      &none         &lht NAV SPACE &kp RGUI
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -269,23 +287,6 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ LOCK SCR │          │ PG UP    │ PG DN    │ F11      │   │ F12      │ CTRL+]   │ CTRL+[   │          │ CTRL+SPC │
          &lock_screen  &none     &kp PG_UP  &kp PG_DN  &kp F11       &kp F12  &kp LC(RBKT) &kp LC(LBKT) &none  &kp RC(SPACE)
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &none      &none          &none      &none
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        sys_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │BOOTLOADER│          │          │          │          │
-            &none      &none      &none      &none      &none        &bootloader &none      &none      &none      &none
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none          &none      &none      &none      &none      &none
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none          &none      &none      &none      &none      &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &none      &none          &none      &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
