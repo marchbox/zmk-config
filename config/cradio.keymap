@@ -188,7 +188,7 @@
 
         base_layer { // 0
             display-name = "Base";
-            binding = <
+            bindings = <
                 // Row 1
                 &kp Q &kp W &kp F &kp P &kp B
                 &kp J &kp L &kp U &kp Y &kp SEMI
@@ -206,7 +206,7 @@
 
         symbol_layer { // 1
             display-name = "Symbol";
-            binding = <
+            bindings = <
                 // Row 1
                 &at_prcnt &quotes &excl_qmark &dot_comma &pipe_amps
                 &dllr_hash &kp GRAVE &colon_semi &slashes &star_caret
@@ -224,7 +224,7 @@
 
         mouse_layer { // 2
             display-name = "Mouse";
-            binding = <
+            bindings = <
                 // Row 1
                 &none &none &none &none &none
                 &none &none &m_u &none &none
@@ -242,7 +242,7 @@
 
         nav_layer { // 3
             display-name = "Nav";
-            binding = <
+            bindings = <
                 // Row 1
                 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5
                 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
