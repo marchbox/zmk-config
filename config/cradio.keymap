@@ -166,7 +166,7 @@
             bindings = <&bt BT_SEL 2>, <&bt BT_DISC 2>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-    }
+    };
 
     macros {
         // Lock screen: Ctrl+Cmd+Q, wait 1s, Escape
@@ -202,7 +202,7 @@
                 &kp BSPC &lt 2 SPACE
                 &mo 1 &kp ESC
             >;
-        }
+        };
 
         symbol_layer { // 1
             display-name = "Symbol";
@@ -220,7 +220,7 @@
                 &kp BSPC &lt 3 SPACE
                 &none &none
             >;
-        }
+        };
 
         mouse_layer { // 2
             display-name = "Mouse";
@@ -238,7 +238,7 @@
                 &none &none
                 &mo 3 &none
             >;
-        }
+        };
 
         nav_layer { // 3
             display-name = "Nav";
@@ -256,8 +256,8 @@
                 &none &none
                 &none &none
             >;
-        }
-    }
+        };
+    };
 
     combos {
         compatible = "zmk,combos";
