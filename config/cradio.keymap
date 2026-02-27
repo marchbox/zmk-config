@@ -1,8 +1,5 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
-//
-// Converted from Vial config: splitkb-halcyon-ferris.vil
-// Layout: Colemak-DH with home row mods
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -124,6 +121,13 @@
             bindings = <&kp GT>, <&kp LS(LA(RBKT))>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        // Mouse
         m_u: mouse_up {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -148,6 +152,7 @@
             bindings = <&mmv MOVE_RIGHT>, <&msc SCRL_LEFT>;
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
+        // Bluetooth
         bt_0: bluetooth_profile_0 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -199,7 +204,7 @@
                 &kp Z &kp X &kp C &kp D &kp V
                 &kp K &kp H &kp COMMA &kp DOT &kp RA(RBKT)
                 // Row 4
-                &kp BSPC &lt 2 SPACE
+                &bspc_del &lt 2 SPACE
                 &mo 1 &kp ESC
             >;
         };
@@ -217,7 +222,7 @@
                 &lbkt_odq &rbkt_cdq &kp LBRC &kp RBRC &kp MINUS
                 &kp EQUAL &kp LPAR &kp RPAR &lt_osq &gt_csq
                 // Row 4
-                &kp BSPC &lt 3 SPACE
+                &bspc_del &lt 3 SPACE
                 &none &none
             >;
         };
@@ -262,7 +267,7 @@
     combos {
         compatible = "zmk,combos";
 
-        // W + F → CapLock
+        // Caps lock
         combo_cap {
             timeout-ms = <50>;
             key-positions = <1 2>;
@@ -270,7 +275,7 @@
             layers = <0>;
         };
 
-        // X + C → Tab (also ] + { on SYM layer)
+        // Tab
         combo_tab {
             timeout-ms = <50>;
             key-positions = <21 22>;
@@ -278,11 +283,11 @@
             layers = <0 1>;
         };
 
-        // , + . → Enter (also ) + < on SYM layer)
+        // Enter
         combo_enter {
             timeout-ms = <50>;
             key-positions = <27 28>;
-            bindings = <&kp RET>;
+            bindings = <&kp ENTER>;
             layers = <0 1>;
         };
     };
