@@ -321,6 +321,6 @@
             key-positions = <30 33>;
             bindings = <&soft_off>;
             layers = <3>;
-        }
+        };
     };
 };
