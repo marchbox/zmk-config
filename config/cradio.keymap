@@ -3,8 +3,8 @@
 
 // https://github.com/urob/zmk-config/blob/main/config/mouse.dtsi
 // Settings tuned for 3840 x 2160 display resolution
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 600 // 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20  // 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -61,23 +61,23 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <100>;
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <10 11 12 13>;
-            // hold-trigger-on-release;
+            hold-trigger-on-release;
         };
         hmr: home_row_mod_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <100>;
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <16 17 18 19>;
-            // hold-trigger-on-release;
+            hold-trigger-on-release;
         };
 
         // Alternative shifts
