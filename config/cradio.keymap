@@ -25,12 +25,6 @@
 };
 
 / {
-    kscan: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
-        wakeup-source;
-    };
-
     behaviors {
         // Tap dance: screenshot
         // Tap: Cmd+Ctrl+Shift+4 (screenshot to clipboard)
