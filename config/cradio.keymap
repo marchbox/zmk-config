@@ -219,8 +219,8 @@
             display-name = "Mouse";
             bindings = <
                 // Row 1
-                &bootloader &none &none &none &none
-                &none &none &m_u &none &bootloader
+                &none &none &none &none &none
+                &none &none &m_u &none &none
                 // Row 2
                 &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &none
                 &none &m_l &m_d &m_r &none
@@ -277,6 +277,20 @@
             key-positions = <27 28>;
             bindings = <&kp ENTER>;
             layers = <0 1>;
+        };
+
+        // Bootloaders
+        combo_bootloader_left {
+            timeout-ms = <50>;
+            key-position = <0 4>;
+            bindings = <&bootloader>;
+            layers = <2>;
+        };
+        combo_bootloader_right {
+            timeout-ms = <50>;
+            key-position = <5 9>;
+            bindings = <&bootloader>;
+            layers = <2>;
         };
     };
 };
