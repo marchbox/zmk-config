@@ -1,8 +1,10 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 800
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
+#undef ZMK_MOUSE_DEFAULT_MOVE_VAL
+#undef ZMK_MOUSE_DEFAULT_SCRL_VAL
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 6000
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 40
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -11,13 +13,13 @@
 
 &mmv {
     acceleration-exponent = <1>;
-    time-to-max-speed-ms = <500>;
+    time-to-max-speed-ms = <550>;
     delay-ms = <0>;
 };
 
 &msc {
-    acceleration-exponent = <0>;
-    time-to-max-speed-ms = <600>;
+    acceleration-exponent = <1>;
+    time-to-max-speed-ms = <100>;
     delay-ms = <0>;
 };
 
