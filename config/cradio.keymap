@@ -21,7 +21,7 @@
 
 &msc {
     acceleration-exponent = <0>;
-    time-to-max-speed-ms = <300>;
+    time-to-max-speed-ms = <600>;
     delay-ms = <0>;
 };
 
@@ -65,8 +65,8 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <10 11 12 13>;
-            hold-trigger-on-release;
+            // hold-trigger-key-positions = <10 11 12 13>;
+            // hold-trigger-on-release;
         };
         hmr: home_row_mod_right {
             compatible = "zmk,behavior-hold-tap";
@@ -76,8 +76,8 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <16 17 18 19>;
-            hold-trigger-on-release;
+            // hold-trigger-key-positions = <16 17 18 19>;
+            // hold-trigger-on-release;
         };
 
         // Alternative shifts
