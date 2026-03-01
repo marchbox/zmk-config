@@ -7,8 +7,8 @@
 #include <dt-bindings/zmk/pointing.h>
 
 &soft_off {
-    hold-time-ms = <5000>
-}
+    hold-time-ms = <5000>;
+};
 
 &mmv {
     acceleration-exponent = <1>;
