@@ -189,16 +189,15 @@
     };
 
     macros {
-        // Lock screen: Ctrl+Cmd+Q, wait 1s, Escape
-        lock_screen: macro_lock_screen {
+        // Sleep (macOS): Ctrl+Cmd+Q, wait 1s, Escape
+        // “cheese” is a Googler reference, if you know you know.
+        no_cheese: macro_no_cheese {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <1000>;
             bindings
-                = <&macro_tap &kp LC(LG(Q))>
-                , <&macro_wait_time 1000>
-                , <&macro_tap &kp ESC>
+                = <&kp LC(LG(Q))>
+                , <&kp ESC>
                 ;
         };
     };
@@ -270,7 +269,7 @@
                 &hml LSHFT F11 &hml LALT END &hml LCTRL PG_UP &hml LGUI PG_DN &kp HOME
                 &kp LEFT &hmr RGUI DOWN &hmr RCTRL UP &hmr RALT RIGHT &hmr RSHFT F12
                 // Row 3
-                &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &lock_screen
+                &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &no_cheese
                 &screenshot &bt_0 &bt_1 &bt_2 &bt BT_CLR
                 // Row 4
                 &none &none
