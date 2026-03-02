@@ -197,8 +197,8 @@
             >;
         };
 
-        symbol_layer { // 1
-            display-name = "Symbol";
+        symnum_layer { // 1
+            display-name = "Symbol & number";
             bindings = <
                 // Row 1
                 &at_prcnt &quotes &excl_qmark &dot_comma &pipe_amps
@@ -233,8 +233,8 @@
             >;
         };
 
-        nav_layer { // 3
-            display-name = "Nav";
+        navfunc_layer { // 3
+            display-name = "Navigation & functions";
             bindings = <
                 // Row 1
                 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5
@@ -251,8 +251,8 @@
             >;
         };
 
-        settings_layer { // 4
-            display-name = "Settings";
+        system_layer { // 4
+            display-name = "System";
             bindings = <
                 // Row 1
                 &bootloader &none &none &none &none
@@ -262,7 +262,7 @@
                 &bt BT_SEL 4 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
                 // Row 3
                 &none &kp C_PREV &kp C_NEXT &kp C_PP &none
-                &bt BT_DISC 4 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3
+                &none &none &none &none &none
                 // Row 4
                 &none &none
                 &none &none
