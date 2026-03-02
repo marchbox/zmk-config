@@ -193,7 +193,7 @@
                 &kp K &kp H &kp COMMA &kp DOT &kp RA(RBKT)
                 // Row 4
                 &bspc_del &lt 2 SPACE
-                &mo 1 &lt 3 ESC
+                &mo 1 &lt 4 ESC
             >;
         };
 
@@ -261,7 +261,7 @@
                 &none &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &none
                 &bt BT_SEL 4 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
                 // Row 3
-                &none &kp C_PREV &kp C_NEXT &kp C_PP &none
+                &none &C_PREV &kp C_NEXT &kp C_PP &none
                 &bt BT_DISC 4 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3
                 // Row 4
                 &none &none
