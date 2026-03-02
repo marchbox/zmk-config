@@ -190,7 +190,7 @@
                 &kp M HRMR(N, E, I, O)
                 // Row 3
                 &kp Z &kp X &kp C &kp D &kp V
-                &kp K &kp H &kp COMMA &kp DOT &kp RA(RBKT)
+                &kp K &kp H &kp COMMA &kp DOT &kp RS(RA(RBKT))
                 // Row 4
                 &bspc_del &lt 2 SPACE
                 &mo 1 &lt 4 ESC
