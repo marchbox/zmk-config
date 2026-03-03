@@ -27,6 +27,7 @@
 #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
 
+// Make mod-morph macro
 #define MAKE_MM(NAME, MAIN, SHIFTED) \
     NAME: NAME { \
         compatible = "zmk,behavior-mod-morph"; \
@@ -35,7 +36,8 @@
         mods = <(MOD_LSFT|MOD_RSFT)>; \
     };
 
-#define MAKE_HT(NAME, TAP) \
+// Make hold-tap with mod-morph macro
+#define MAKE_MMHT(NAME, TAP) \
     NAME: NAME { \
         compatible = "zmk,behavior-hold-tap"; \
         #binding-cells = <2>; \
@@ -45,6 +47,9 @@
         quick-tap-ms = <175>; \
         bindings = <&kp>, <TAP>; \
     };
+
+// Home row mod key with mod-morph behavior
+#define HRM_MM(MM, MOD) MM MOD 0
 
 / {
     behaviors {
@@ -61,88 +66,47 @@
         // Hold tap
         MAKE_HT(ht, &kp)
 
-        // Alternative shifts
-        MAKE_MM(at_prcnt_mm, &kp AT, &kp PERCENT)
-        MAKE_HT(at_prcnt, &at_prcnt_mm)
+        MAKE_MM(at_prcnt, &kp AT, &kp PERCENT)
+        MAKE_MMHT(at_prcnt_ht, &at_prcnt)
 
-        quotes: double_single_quotes { // ", '
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DQT>, <&kp SQT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        excl_qmark: exclamation_question { // !, ?
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp EXCL>, <&kp QMARK>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        dot_comma: dot_comma { // ., ,
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COMMA>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        pipe_amps: pipe_ampersand { // |, &
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp PIPE>, <&kp AMPS>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        dllr_hash: dollar_hash { // $, #
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DLLR>, <&kp HASH>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        colon_semi: colon_semicolon { // :, ;
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp COLON>, <&kp SEMI>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        slashes: forward_slash_backslash {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp FSLH>, <&kp BSLH>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        star_caret: star_caret { // *, ^
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp STAR>, <&kp CARET>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        lbkt_odq: left_bracket_open_double_quote { // [, “
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LBKT>, <&kp LA(LBKT)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        rbkt_cdq: right_bracket_close_double_quote { // ], ”
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RBKT>, <&kp LS(LA(LBKT))>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        lt_osq: less_than_open_single_quote { // <, ‘
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LT>, <&kp LA(RBKT)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        gt_csq: greater_than_close_single_quote { // >, ’
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp GT>, <&kp LS(LA(RBKT))>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        bspc_del: backspace_delete {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+        MAKE_MM(quotes, &kp DQT, &kp SQT)
+        MAKE_MMHT(quotes_ht, &quotes)
+
+        MAKE_MM(excl_qmark, &kp EXCL, &kp QMARK)
+        MAKE_MMHT(excl_qmark_ht, &excl_qmark)
+
+        MAKE_MM(dot_comma, &kp DOT, &kp COMMA)
+        MAKE_MMHT(dot_comma_ht, &dot_comma)
+
+        MAKE_MM(pipe_amps, &kp PIPE, &kp AMPS)
+        MAKE_MMHT(pipe_amps_ht, &pipe_amps)
+
+        MAKE_MM(dllr_hash, &kp DLLR, &kp HASH)
+        MAKE_MMHT(dllr_hash_ht, &dllr_hash)
+
+        MAKE_MM(colon_semi, &kp COLON, &kp SEMI)
+        MAKE_MMHT(colon_semi_ht, &colon_semi)
+
+        MAKE_MM(slashes, &kp FSLH, &kp BSLH)
+        MAKE_MMHT(slashes_ht, &slashes)
+
+        MAKE_MM(star_caret, &kp STAR, &kp CARET)
+        MAKE_MMHT(star_caret_ht, &star_caret)
+
+        MAKE_MM(lbkt_odq, &kp LBKT, &kp LA(LBKT))
+        MAKE_MMHT(lbkt_odq_ht, &lbkt_odq)
+
+        MAKE_MM(rbkt_cdq, &kp RBKT, &kp LS(LA(LBKT)))
+        MAKE_MMHT(rbkt_cdq_ht, &rbkt_cdq)
+
+        MAKE_MM(lt_osq, &kp LT, &kp LA(RBKT))
+        MAKE_MMHT(lt_osq_ht, &lt_osq)
+
+        MAKE_MM(gt_csq, &kp GT, &kp LS(LA(RBKT)))
+        MAKE_MMHT(gt_csq_ht, &gt_csq)
+
+        MAKE_MM(bspc_del, &kp BSPC, &kp DEL)
+
         // Mouse
         m_u: mouse_up {
             compatible = "zmk,behavior-mod-morph";
@@ -212,8 +176,8 @@
                 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
                 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
                 // Row 2
-                &at_prcnt LSHFT 0 &quotes &excl_qmark &dot_comma &pipe_amps
-                &dllr_hash HRMR(GRAVE, &colon_semi, &slashes, &star_caret)
+                HRM_MM(&at_prcnt_ht, LSHFT) HRM_MM(&quotes, LALT) HRM_MM(&excl_qmark, LCTRL) HRM_MM(&dot_comma, LGUI) &pipe_amps
+                &dllr_hash &ht RGUI GRAVE HRM_MM(&colon_semi, RCTRL) HRM_MM(&slashes, RALT) HRM_MM(&star_caret, RSHFT)
                 // Row 3
                 &lbkt_odq &rbkt_cdq &kp LBRC &kp RBRC &kp MINUS
                 &kp EQUAL &kp LPAR &kp RPAR &lt_osq &gt_csq
