@@ -212,7 +212,7 @@
                 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
                 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
                 // Row 2
-                &at_prcnt LSHFT 0r&quotes &excl_qmark &dot_comma &pipe_amps
+                &at_prcnt LSHFT 0 &quotes &excl_qmark &dot_comma &pipe_amps
                 &dllr_hash HRMR(GRAVE, &colon_semi, &slashes, &star_caret)
                 // Row 3
                 &lbkt_odq &rbkt_cdq &kp LBRC &kp RBRC &kp MINUS
