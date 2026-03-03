@@ -66,44 +66,44 @@
         // Hold tap
         MAKE_HT(ht, &kp)
 
-        MAKE_MM(at_prcnt, &kp AT, &kp PERCENT)
-        MAKE_HT(at_prcnt_ht, &at_prcnt)
+        MAKE_MM(smm2_0_, &kp GRAVE, &kp TILDE)
+        MAKE_HT(smm2_0, &smm2_0_)
 
-        MAKE_MM(quotes, &kp DQT, &kp SQT)
-        MAKE_HT(quotes_ht, &quotes)
+        MAKE_MM(smm2_1_, &kp QMARK, &kp AMPS)
+        MAKE_HT(smm2_1, &smm2_1_)
 
-        MAKE_MM(excl_qmark, &kp EXCL, &kp QMARK)
-        MAKE_HT(excl_qmark_ht, &excl_qmark)
+        MAKE_MM(smm2_2_, &kp EXCL, &kp PIPE)
+        MAKE_HT(smm2_2, &smm2_2_)
 
-        MAKE_MM(dot_comma, &kp DOT, &kp COMMA)
-        MAKE_HT(dot_comma_ht, &dot_comma)
+        MAKE_MM(smm2_3_, &kp DQT, &kp SQT)
+        MAKE_HT(smm2_3, &smm2_3_)
 
-        MAKE_MM(pipe_amps, &kp PIPE, &kp AMPS)
-        MAKE_HT(pipe_amps_ht, &pipe_amps)
+        MAKE_MM(smm2_4, &kp SEMI, &kp SEMI)
 
-        MAKE_MM(dllr_hash, &kp DLLR, &kp HASH)
-        MAKE_HT(dllr_hash_ht, &dllr_hash)
+        MAKE_MM(smm2_5, &kp FSLH, &kp BSLH)
 
-        MAKE_MM(colon_semi, &kp COLON, &kp SEMI)
-        MAKE_HT(colon_semi_ht, &colon_semi)
+        MAKE_MM(smm2_6_, &kp LPAR, &kp AT)
+        MAKE_HT(smm2_6, &smm2_6_)
 
-        MAKE_MM(slashes, &kp FSLH, &kp BSLH)
-        MAKE_HT(slashes_ht, &slashes)
+        MAKE_MM(smm2_7_, &kp RPAR, &kp HASH)
+        MAKE_HT(smm2_7, &smm2_7_)
 
-        MAKE_MM(star_caret, &kp STAR, &kp CARET)
-        MAKE_HT(star_caret_ht, &star_caret)
+        MAKE_MM(smm2_8_, &kp LT, &kp DLLR)
+        MAKE_HT(smm2_8, &smm2_8_)
 
-        MAKE_MM(lbkt_odq, &kp LBKT, &kp LA(LBKT))
-        MAKE_HT(lbkt_odq_ht, &lbkt_odq)
+        MAKE_MM(smm2_9_, &kp GT, &kp PRCNT)
+        MAKE_HT(smm2_9, &smm2_9_)
 
-        MAKE_MM(rbkt_cdq, &kp RBKT, &kp LS(LA(LBKT)))
-        MAKE_HT(rbkt_cdq_ht, &rbkt_cdq)
-
-        MAKE_MM(lt_osq, &kp LT, &kp LA(RBKT))
-        MAKE_HT(lt_osq_ht, &lt_osq)
-
-        MAKE_MM(gt_csq, &kp GT, &kp LS(LA(RBKT)))
-        MAKE_HT(gt_csq_ht, &gt_csq)
+        MAKE_MM(smm3_0, &kp DOT, &kp COMMA)
+        MAKE_MM(smm3_1, &kp EQUAL, &kp EQUAL)
+        MAKE_MM(smm3_2, &kp MINUS, &kp UNDER)
+        MAKE_MM(smm3_3, &kp PLUS, &kp PLUS)
+        MAKE_MM(smm3_4, &kp COLON, &kp COLON)
+        MAKE_MM(smm3_5, &kp STAR, &kp CARET)
+        MAKE_MM(smm3_6, &kp LBRC, &kp LA(LBKT))
+        MAKE_MM(smm3_7, &kp RBRC, &kp LS(LA(LBKT)))
+        MAKE_MM(smm3_8, &kp LBKT, &kp LA(RBKT))
+        MAKE_MM(smm3_9, &kp RBKT, &kp LS(LA(RBKT)))
 
         MAKE_MM(bspc_del, &kp BSPC, &kp DEL)
 
@@ -176,11 +176,14 @@
                 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
                 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
                 // Row 2
-                HRM_MM(&lbkt_odq_ht, LSHFT) HRM_MM(&rbkt_cdq_ht, LALT) &ht LCTRL LBRC &ht LGUI RBRC &kp MINUS
-                &kp EQUAL &ht RGUI LPAR &ht RCTRL RPAR HRM_MM(&lt_osq_ht, RALT) HRM_MM(&gt_csq_ht, RSHFT)
+                HRM_MM(&smm2_0, LSHFT) HRM_MM(&smm2_1, LALT)
+                HRM_MM(&smm2_2, LCTRL) HRM_MM(&smm2_3, LGUI)
+                &smm2_4 &smm2_5
+                HRM_MM(&smm2_6, RGUI) HRM_MM(&smm2_7, RCTRL)
+                HRM_MM(&smm2_8, RALT) HRM_MM(&smm2_9, RSHFT)
                 // Row 3
-                &at_prcnt &kp EXCL &kp QMARK &quotes &pipe_amps
-                &dllr_hash &kp GRAVE &colon_semi &slashes &star_caret
+                &smm3_0 &smm3_1 &smm3_2 &smm3_3 &smm3_4
+                &smm3_5 &smm3_6 &smm3_7 &smm3_8 &smm3_9
                 // Row 4
                 &bspc_del &lt 3 SPACE
                 &none &none
