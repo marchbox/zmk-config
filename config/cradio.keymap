@@ -177,7 +177,7 @@
                 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
                 // Row 2
                 HRM_MM(&lbkt_odq_ht, LSHFT) HRM_MM(&rbkt_cdq_ht, LALT) &ht LCTRL LBRC &ht LGUI RBRC &kp MINUS
-                &kp EQUAL &ht RGUI LPAR &ht RCTRL RPAR HRM_MM(&lt_osq_ht, RALT) HRM_MM(&gt_csq_ht, RGUI)
+                &kp EQUAL &ht RGUI LPAR &ht RCTRL RPAR HRM_MM(&lt_osq_ht, RALT) HRM_MM(&gt_csq_ht, RSHFT)
                 // Row 3
                 &at_prcnt &kp EXCL &kp QMARK &quotes &pipe_amps
                 &dllr_hash &kp GRAVE &colon_semi &slashes &star_caret
