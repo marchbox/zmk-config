@@ -176,8 +176,8 @@
                 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
                 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
                 // Row 2
-                HRM_MM(&at_prcnt_ht, LSHFT) HRM_MM(&quotes, LALT) HRM_MM(&excl_qmark, LCTRL) HRM_MM(&dot_comma, LGUI) &pipe_amps
-                &dllr_hash &ht RGUI GRAVE HRM_MM(&colon_semi, RCTRL) HRM_MM(&slashes, RALT) HRM_MM(&star_caret, RSHFT)
+                HRM_MM(&at_prcnt_ht, LSHFT) HRM_MM(&quotes_ht, LALT) HRM_MM(&excl_qmark_ht, LCTRL) HRM_MM(&dot_comma_ht, LGUI) &pipe_amps
+                &dllr_hash &ht RGUI GRAVE HRM_MM(&colon_semi_ht, RCTRL) HRM_MM(&slashes_ht, RALT) HRM_MM(&star_caret_ht, RSHFT)
                 // Row 3
                 &lbkt_odq &rbkt_cdq &kp LBRC &kp RBRC &kp MINUS
                 &kp EQUAL &kp LPAR &kp RPAR &lt_osq &gt_csq
