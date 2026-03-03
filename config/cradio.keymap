@@ -37,7 +37,7 @@
     };
 
 // Make hold-tap with mod-morph macro
-#define MAKE_MMHT(NAME, TAP) \
+#define MAKE_HT(NAME, TAP) \
     NAME: NAME { \
         compatible = "zmk,behavior-hold-tap"; \
         #binding-cells = <2>; \
@@ -67,43 +67,43 @@
         MAKE_HT(ht, &kp)
 
         MAKE_MM(at_prcnt, &kp AT, &kp PERCENT)
-        MAKE_MMHT(at_prcnt_ht, &at_prcnt)
+        MAKE_HT(at_prcnt_ht, &at_prcnt)
 
         MAKE_MM(quotes, &kp DQT, &kp SQT)
-        MAKE_MMHT(quotes_ht, &quotes)
+        MAKE_HT(quotes_ht, &quotes)
 
         MAKE_MM(excl_qmark, &kp EXCL, &kp QMARK)
-        MAKE_MMHT(excl_qmark_ht, &excl_qmark)
+        MAKE_HT(excl_qmark_ht, &excl_qmark)
 
         MAKE_MM(dot_comma, &kp DOT, &kp COMMA)
-        MAKE_MMHT(dot_comma_ht, &dot_comma)
+        MAKE_HT(dot_comma_ht, &dot_comma)
 
         MAKE_MM(pipe_amps, &kp PIPE, &kp AMPS)
-        MAKE_MMHT(pipe_amps_ht, &pipe_amps)
+        MAKE_HT(pipe_amps_ht, &pipe_amps)
 
         MAKE_MM(dllr_hash, &kp DLLR, &kp HASH)
-        MAKE_MMHT(dllr_hash_ht, &dllr_hash)
+        MAKE_HT(dllr_hash_ht, &dllr_hash)
 
         MAKE_MM(colon_semi, &kp COLON, &kp SEMI)
-        MAKE_MMHT(colon_semi_ht, &colon_semi)
+        MAKE_HT(colon_semi_ht, &colon_semi)
 
         MAKE_MM(slashes, &kp FSLH, &kp BSLH)
-        MAKE_MMHT(slashes_ht, &slashes)
+        MAKE_HT(slashes_ht, &slashes)
 
         MAKE_MM(star_caret, &kp STAR, &kp CARET)
-        MAKE_MMHT(star_caret_ht, &star_caret)
+        MAKE_HT(star_caret_ht, &star_caret)
 
         MAKE_MM(lbkt_odq, &kp LBKT, &kp LA(LBKT))
-        MAKE_MMHT(lbkt_odq_ht, &lbkt_odq)
+        MAKE_HT(lbkt_odq_ht, &lbkt_odq)
 
         MAKE_MM(rbkt_cdq, &kp RBKT, &kp LS(LA(LBKT)))
-        MAKE_MMHT(rbkt_cdq_ht, &rbkt_cdq)
+        MAKE_HT(rbkt_cdq_ht, &rbkt_cdq)
 
         MAKE_MM(lt_osq, &kp LT, &kp LA(RBKT))
-        MAKE_MMHT(lt_osq_ht, &lt_osq)
+        MAKE_HT(lt_osq_ht, &lt_osq)
 
         MAKE_MM(gt_csq, &kp GT, &kp LS(LA(RBKT)))
-        MAKE_MMHT(gt_csq_ht, &gt_csq)
+        MAKE_HT(gt_csq_ht, &gt_csq)
 
         MAKE_MM(bspc_del, &kp BSPC, &kp DEL)
 
