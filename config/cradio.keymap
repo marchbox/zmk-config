@@ -24,8 +24,8 @@
 };
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+#define HRML(k1,k2,k3,k4) &ht LSHFT k1 &ht LALT k2 &ht LCTRL k3 &ht LGUI k4
+#define HRMR(k1,k2,k3,k4) &ht RGUI k1 &ht RCTRL k2 &ht RALT k3 &ht RSHFT k4
 
 // Make mod-morph macro
 #define MAKE_MM(NAME, MAIN, SHIFTED) \
@@ -176,11 +176,11 @@
                 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
                 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
                 // Row 2
-                HRM_MM(&at_prcnt_ht, LSHFT) HRM_MM(&quotes_ht, LALT) HRM_MM(&excl_qmark_ht, LCTRL) HRM_MM(&dot_comma_ht, LGUI) &pipe_amps
-                &dllr_hash &ht RGUI GRAVE HRM_MM(&colon_semi_ht, RCTRL) HRM_MM(&slashes_ht, RALT) HRM_MM(&star_caret_ht, RSHFT)
+                HRM_MM(&lbkt_odq_ht, LSHFT) HRM_MM(&rbkt_cdq_ht, LALT) &ht LCTRL LBRC &ht LGUI RBRC &kp MINUS
+                &kp EQUAL &ht RGUI LPAR &ht RCTRL RPAR HRM_MM(&lt_osq_ht, RALT) HRM_MM(&gt_csq_ht, RGUI)
                 // Row 3
-                &lbkt_odq &rbkt_cdq &kp LBRC &kp RBRC &kp MINUS
-                &kp EQUAL &kp LPAR &kp RPAR &lt_osq &gt_csq
+                &at_prcnt &kp EXCL &kp QMARK &quotes &pipe_amps
+                &dllr_hash &kp GRAVE &colon_semi &slashes &star_caret
                 // Row 4
                 &bspc_del &lt 3 SPACE
                 &none &none
