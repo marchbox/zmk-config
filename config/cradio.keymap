@@ -57,6 +57,15 @@
             bindings = <&kp AT>, <&kp PERCENT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        at_prcnt_ht: at_percent_ht {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&at_percent>;
+        };
         quotes: double_single_quotes { // ", '
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -204,7 +213,7 @@
                 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
                 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
                 // Row 2
-                HRML(&at_prcnt, &quotes, &excl_qmark, &dot_comma) &pipe_amps
+                &at_prcnt_ht LSHFT 0 &quotes &excl_qmark &dot_comma &pipe_amps
                 &dllr_hash HRMR(GRAVE, &colon_semi, &slashes, &star_caret)
                 // Row 3
                 &lbkt_odq &rbkt_cdq &kp LBRC &kp RBRC &kp MINUS
