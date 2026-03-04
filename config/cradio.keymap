@@ -231,6 +231,14 @@
     combos {
         compatible = "zmk,combos";
 
+        // Backspace
+        combo_bspc {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp BSPC>;
+            layers = <0 1>;
+        }
+
         // Caps lock
         combo_cap {
             timeout-ms = <50>;
