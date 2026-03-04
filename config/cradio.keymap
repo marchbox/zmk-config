@@ -66,8 +66,6 @@
         // Hold tap
         MAKE_HT(ht, &kp)
 
-        MAKE_MM(bspc_del, &kp BSPC, &kp DEL)
-
         // Hold tap: symbols
         MAKE_MM(smm2_0_, &kp EQUAL, &kp CARET       ) MAKE_HT(smm2_0, &smm2_0_)
         MAKE_MM(smm2_1_, &kp MINUS, &kp UNDER       ) MAKE_HT(smm2_1, &smm2_1_)
@@ -147,8 +145,8 @@
                 &kp Z &kp X &kp C &kp D &kp V
                 &kp K &kp H &kp COMMA &kp DOT &kp RS(RA(RBKT))
                 // Row 4
-                &bspc_del &lt 2 SPACE
-                &mo 1 &lt 4 ESC
+                &kp LSHFT &lt 2 SPACE
+                &mo 1 &kp RSHFT
             >;
         };
 
@@ -168,7 +166,7 @@
                 &smm3_0 &smm3_1 &smm3_2 &smm3_3 &smm3_4
                 &smm3_5 &smm3_6 &smm3_7 &smm3_8 &smm3_9
                 // Row 4
-                &bspc_del &lt 3 SPACE
+                &none &lt 3 SPACE
                 &none &none
             >;
         };
@@ -231,6 +229,30 @@
     combos {
         compatible = "zmk,combos";
 
+        // Esc
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp ESC>;
+            layers = <0 1>;
+        };
+
+        // Del
+        combo_del {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&kp CAPS>;
+            layers = <0 1>;
+        };
+
+        // Tab
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&kp TAB>;
+            layers = <0 1>;
+        };
+
         // Backspace
         combo_bspc {
             timeout-ms = <50>;
@@ -242,17 +264,9 @@
         // Caps lock
         combo_cap {
             timeout-ms = <50>;
-            key-positions = <1 2>;
+            key-positions = <21 22>;
             bindings = <&kp CAPS>;
             layers = <0>;
-        };
-
-        // Tab
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&kp TAB>;
-            layers = <0 1>;
         };
 
         // Enter
