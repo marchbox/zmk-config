@@ -95,25 +95,25 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_UP>, <&msc SCRL_DOWN>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
         m_d: mouse_down {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_DOWN>, <&msc SCRL_UP>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
         m_l: mouse_left {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_LEFT>, <&msc SCRL_RIGHT>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
         m_r: mouse_right {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_RIGHT>, <&msc SCRL_LEFT>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
     };
 
