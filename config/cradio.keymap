@@ -78,7 +78,7 @@
         MAKE_MM(smm2_3_, &kp DQT, &kp SQT)
         MAKE_HT(smm2_3, &smm2_3_)
 
-        MAKE_MM(smm2_4, &kp SEMI, &kp SEMI)
+        MAKE_MM(smm2_4, &kp COLON, &kp COLON)
 
         MAKE_MM(smm2_5, &kp FSLH, &kp BSLH)
 
@@ -98,7 +98,7 @@
         MAKE_MM(smm3_1, &kp EQUAL, &kp EQUAL)
         MAKE_MM(smm3_2, &kp MINUS, &kp UNDER)
         MAKE_MM(smm3_3, &kp PLUS, &kp PLUS)
-        MAKE_MM(smm3_4, &kp COLON, &kp COLON)
+        MAKE_MM(smm3_4, &kp SEMI, &kp SEMI)
         MAKE_MM(smm3_5, &kp STAR, &kp CARET)
         MAKE_MM(smm3_6, &kp LBRC, &kp LA(LBKT))
         MAKE_MM(smm3_7, &kp RBRC, &kp LS(LA(LBKT)))
