@@ -185,7 +185,7 @@
                 &none &mkp MB1 &none &mkp MB2 &none
                 // Row 4
                 &none &none
-                &mo 3 &none
+                &mo 3 &mo 4
             >;
         };
 
