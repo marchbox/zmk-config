@@ -145,8 +145,8 @@
                 &kp Z &kp X &kp C &kp D &kp V
                 &kp K &kp H &kp COMMA &kp DOT &kp RS(RA(RBKT))
                 // Row 4
-                &ht LSHFT ESC &lt 2 SPACE
-                &mo 1 &ht RSHFT BSPC
+                &kp ESC &lt 1 SPACE
+                &mo 2 &kp BSPC
             >;
         };
 
@@ -166,8 +166,8 @@
                 &smm3_0 &smm3_1 &smm3_2 &smm3_3 &smm3_4
                 &smm3_5 &smm3_6 &smm3_7 &smm3_8 &smm3_9
                 // Row 4
-                &none &lt 3 SPACE
-                &none &none
+                &kp SPACE &none
+                &lt 3 SPACE &kp BSPC
             >;
         };
 
@@ -175,17 +175,17 @@
             display-name = "Mouse";
             bindings = <
                 // Row 1
-                &none &none &none &none &none
                 &none &none &m_u &none &none
+                &none &none &none &none &none
                 // Row 2
-                &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &none
-                &none &m_l &m_d &m_r &none
+                &none &m_r &m_d &m_l &none
+                &none &kp LGUI &kp LCTRL &kp LALT &kp LSHFT
                 // Row 3
                 &none &mkp MB2 &kp SPACE &mkp MB1 &none
-                &none &mkp MB1 &none &mkp MB2 &none
+                &none &mkp MB1 &kp SPACE &mkp MB2 &none
                 // Row 4
+                &mo 4 &mo 3
                 &none &none
-                &mo 3 &mo 4
             >;
         };
 
