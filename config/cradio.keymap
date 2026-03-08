@@ -23,9 +23,9 @@
     delay-ms = <0>;
 };
 
-#define LDQT LA(LBKT)    
+#define LDQT LA(LBKT)
 #define RDQT LS(LA(LBKT))
-#define LSQT LA(RBKT)    
+#define LSQT LA(RBKT)
 #define RSQT LS(LA(RBKT))
 
 // Home row mods macro
@@ -58,18 +58,6 @@
 
 / {
     behaviors {
-        // Key toggle
-        kt_on: key_toggle_on {
-            compatible = "zmk,behavior-key-toggle";
-            #binding-cells = <1>;
-            toggle-mode = "on";
-        };
-        kt_off: key_toggle_off {
-            compatible = "zmk,behavior-key-toggle";
-            #binding-cells = <1>;
-            toggle-mode = "off";
-        };
-
         // Tap dance: screenshot
         // Tap: Cmd+Ctrl+Shift+4 (screenshot to clipboard)
         // Double-tap: Cmd+Shift+5 (screenshot options)
@@ -193,7 +181,7 @@
             bindings = <
                 // Row 1
                 &none &none &none &none &none
-                &none &kt_on RALT &m_u &kt_off RALT &none
+                &none &none &m_u &kt RALT &none
                 // Row 2
                 &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &none
                 &none &m_l &m_d &m_r &none
