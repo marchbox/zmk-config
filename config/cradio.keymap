@@ -23,6 +23,11 @@
     delay-ms = <0>;
 };
 
+#define LDQT LA(LBKT)    
+#define RDQT LS(LA(LBKT))
+#define LSQT LA(RBKT)    
+#define RSQT LS(LA(RBKT))
+
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LSHFT k1 &ht LALT k2 &ht LCTRL k3 &ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1 &ht RCTRL k2 &ht RALT k3 &ht RSHFT k4
@@ -79,26 +84,26 @@
         MAKE_HT(ht, &kp)
 
         // Hold tap: symbols
-        MAKE_MM(smm2_0_, &kp EQUAL, &kp CARET       ) MAKE_HT(smm2_0, &smm2_0_)
-        MAKE_MM(smm2_1_, &kp MINUS, &kp UNDER       ) MAKE_HT(smm2_1, &smm2_1_)
-        MAKE_MM(smm2_2_, &kp PLUS , &kp STAR        ) MAKE_HT(smm2_2, &smm2_2_)
-        MAKE_MM(smm2_3_, &kp DQT  , &kp SQT         ) MAKE_HT(smm2_3, &smm2_3_)
-        MAKE_MM(smm2_4 , &kp GRAVE, &kp TILDE       )
-        MAKE_MM(smm2_5 , &kp FSLH , &kp BSLH        )
-        MAKE_MM(smm2_6_, &kp LPAR , &kp AT          ) MAKE_HT(smm2_6, &smm2_6_)
-        MAKE_MM(smm2_7_, &kp RPAR , &kp HASH        ) MAKE_HT(smm2_7, &smm2_7_)
-        MAKE_MM(smm2_8_, &kp LT   , &kp DLLR        ) MAKE_HT(smm2_8, &smm2_8_)
-        MAKE_MM(smm2_9_, &kp GT   , &kp PRCNT       ) MAKE_HT(smm2_9, &smm2_9_)
-        MAKE_MM(smm3_0 , &kp PIPE , &kp PIPE        )
-        MAKE_MM(smm3_1 , &kp AMPS , &kp AMPS        )
-        MAKE_MM(smm3_2 , &kp QMARK, &kp QMARK       )
-        MAKE_MM(smm3_3 , &kp EXCL , &kp EXCL        )
-        MAKE_MM(smm3_4 , &kp SEMI , &kp SEMI        )
-        MAKE_MM(smm3_5 , &kp COLON, &kp COLON       )
-        MAKE_MM(smm3_6 , &kp LBRC , &kp LA(LBKT)    )
-        MAKE_MM(smm3_7 , &kp RBRC , &kp LS(LA(LBKT)))
-        MAKE_MM(smm3_8 , &kp LBKT , &kp LA(RBKT)    )
-        MAKE_MM(smm3_9 , &kp RBKT , &kp LS(LA(RBKT)))
+        MAKE_MM(smm2_0_, &kp EQUAL, &kp CARET) MAKE_HT(smm2_0, &smm2_0_)
+        MAKE_MM(smm2_1_, &kp MINUS, &kp UNDER) MAKE_HT(smm2_1, &smm2_1_)
+        MAKE_MM(smm2_2_, &kp PLUS , &kp STAR ) MAKE_HT(smm2_2, &smm2_2_)
+        MAKE_MM(smm2_3_, &kp DQT  , &kp SQT  ) MAKE_HT(smm2_3, &smm2_3_)
+        MAKE_MM(smm2_4 , &kp GRAVE, &kp TILDE)
+        MAKE_MM(smm2_5 , &kp FSLH , &kp BSLH )
+        MAKE_MM(smm2_6_, &kp LPAR , &kp AT   ) MAKE_HT(smm2_6, &smm2_6_)
+        MAKE_MM(smm2_7_, &kp RPAR , &kp HASH ) MAKE_HT(smm2_7, &smm2_7_)
+        MAKE_MM(smm2_8_, &kp LT   , &kp DLLR ) MAKE_HT(smm2_8, &smm2_8_)
+        MAKE_MM(smm2_9_, &kp GT   , &kp PRCNT) MAKE_HT(smm2_9, &smm2_9_)
+        MAKE_MM(smm3_0 , &kp PIPE , &kp PIPE )
+        MAKE_MM(smm3_1 , &kp AMPS , &kp AMPS )
+        MAKE_MM(smm3_2 , &kp QMARK, &kp QMARK)
+        MAKE_MM(smm3_3 , &kp EXCL , &kp EXCL )
+        MAKE_MM(smm3_4 , &kp SEMI , &kp SEMI )
+        MAKE_MM(smm3_5 , &kp COLON, &kp COLON)
+        MAKE_MM(smm3_6 , &kp LBRC , &kp LDQT )
+        MAKE_MM(smm3_7 , &kp RBRC , &kp RDQT )
+        MAKE_MM(smm3_8 , &kp LBKT , &kp LSQT )
+        MAKE_MM(smm3_9 , &kp RBKT , &kp RSQT )
 
         // Mouse
         m_u: mouse_up {
