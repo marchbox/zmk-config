@@ -71,11 +71,11 @@ layers:
   - {t: SPACE, h: Nav}
   - BSPC
   Mouse:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - Next media
+  - Play/pause
+  - Mute
+  - Vol down
+  - Vol up
   - ''
   - ''
   - {t: 'Ms ↑', s: 'Wh ↑'}
@@ -152,9 +152,9 @@ layers:
   - ''
   - 'Boot'
   - ''
-  - VOL DN
-  - VOL UP
-  - MUTE
+  - ''
+  - ''
+  - ''
   - ''
   - {t: BT, h: '4'}
   - {t: BT, h: '0'}
@@ -162,9 +162,9 @@ layers:
   - {t: BT, h: '2'}
   - {t: BT, h: '3'}
   - ''
-  - PREV
-  - NEXT
-  - PAUSE
+  - ''
+  - ''
+  - ''
   - ''
   - ''
   - ''

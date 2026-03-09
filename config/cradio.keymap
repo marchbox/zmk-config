@@ -138,7 +138,7 @@
         compatible = "zmk,keymap";
 
         base_layer { // 0
-            display-name = "Base";
+            display-name = "BASE";
             bindings = <
                 // Row 1
                 &kp Q &kp W &kp F &kp P &kp B
@@ -156,7 +156,7 @@
         };
 
         symnum_layer { // 1
-            display-name = "Symbol & number";
+            display-name = "SYMNUM";
             bindings = <
                 // Row 1
                 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
@@ -177,7 +177,7 @@
         };
 
         mouse_layer { // 2
-            display-name = "Mouse";
+            display-name = "MOUSE";
             bindings = <
                 // Row 1
                 &kp C_NEXT &kp C_PP &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP
@@ -195,7 +195,7 @@
         };
 
         navfunc_layer { // 3
-            display-name = "Navigation & functions";
+            display-name = "NAVFUN";
             bindings = <
                 // Row 1
                 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5
@@ -213,7 +213,7 @@
         };
 
         system_layer { // 4
-            display-name = "System";
+            display-name = "SYSTEM";
             bindings = <
                 // Row 1
                 &bootloader &none &none &none &none

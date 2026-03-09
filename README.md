@@ -6,4 +6,4 @@ keyboard.
 
 ## Keymap
 
-![](./drawer/keymap.png)
+![](./drawer/keymap.svg)
