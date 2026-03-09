@@ -1,0 +1,196 @@
+layout: {zmk_keyboard: cradio}
+layers:
+  Base:
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ;
+  - {t: A, h: LSHFT}
+  - {t: R, h: LALT}
+  - {t: S, h: LCTRL}
+  - {t: T, h: LGUI}
+  - G
+  - M
+  - {t: N, h: RGUI}
+  - {t: E, h: RCTRL}
+  - {t: I, h: RALT}
+  - {t: O, h: RSHFT}
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
+  - ','
+  - .
+  - "’"
+  - ESC
+  - {t: SPACE, h: Sym}
+  - Mouse
+  - BSPC
+  Sym:
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - {t: '=', h: LSHFT, s: ^}
+  - {t: '-', h: LALT, s: _}
+  - {t: +, h: LCTRL, s: '*'}
+  - {t: '"', h: LGUI, s: ''''}
+  - {t: '`', s: '~'}
+  - {t: /, s: \}
+  - {t: (, h: RGUI, s: '@'}
+  - {t: ), h: RCTRL, s: '#'}
+  - {t: <, h: RALT, s: $}
+  - {t: '>', h: RSHFT, s: '%'}
+  - {t: '|', s: '|'}
+  - {t: '&', s: '&'}
+  - {t: '?', s: '?'}
+  - {t: '!', s: '!'}
+  - {t: ;, s: ;}
+  - {t: ':', s: ':'}
+  - {t: '{', s: '“'}
+  - {t: '}', s: '”'}
+  - {t: '[', s: '‘'}
+  - {t: ']', s: '’'}
+  - SPACE
+  - {type: held}
+  - {t: SPACE, h: Nav}
+  - BSPC
+  Mouse:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: 'Ms ↑', s: 'Wh ↑'}
+  - {t: Toggle wheel}
+  - ''
+  - LSHFT
+  - LALT
+  - LCTRL
+  - LGUI
+  - ''
+  - ''
+  - {t: 'Ms ←', s: 'Wh ←'}
+  - {t: 'Ms ↓', s: 'Wh ↓'}
+  - {t: 'Ms →', s:  'Wh →'}
+  - ''
+  - ''
+  - 'Mouse 2'
+  - SPACE
+  - 'Mouse 1'
+  - ''
+  - ''
+  - 'Mouse 1'
+  - SPACE
+  - 'Mouse 2'
+  - ''
+  - Sys
+  - Nav
+  - {type: held}
+  - ''
+  Nav:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - {t: F11, h: LSHFT}
+  - {t: END, h: LALT}
+  - {t: PG UP, h: LCTRL}
+  - {t: PG DN, h: LGUI}
+  - HOME
+  - LEFT
+  - {t: DOWN, h: RGUI}
+  - {t: UP, h: RCTRL}
+  - {t: RIGHT, h: RALT}
+  - {t: F12, h: RSHFT}
+  - ''
+  - ''
+  - ''
+  - ''
+  - 'No cheese'
+  - 'Screen shot'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - {type: held}
+  - ''
+  Sys:
+  - 'Boot'
+  - ''
+  - ''
+  - ''
+  - ''
+  - BT CLR
+  - ''
+  - ''
+  - ''
+  - 'Boot'
+  - ''
+  - VOL DN
+  - VOL UP
+  - MUTE
+  - ''
+  - {t: BT, h: '4'}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - ''
+  - PREV
+  - NEXT
+  - PAUSE
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - {type: held}
+  - ''
+combos:
+- p: [1, 2]
+  k: ESC
+  l: [Base, Sym]
+- p: [7, 8]
+  k: DEL
+  l: [Base, Sym]
+- p: [11, 12]
+  k: TAB
+  l: [Base, Sym]
+- p: [17, 18]
+  k: BSPC
+  l: [Base, Sym]
+- p: [21, 22]
+  k: CAPS
+  l: [Base]
+- p: [27, 28]
+  k: ENTER
+  l: [Base, Sym]
