@@ -86,8 +86,8 @@
         MAKE_MM(smm3_1 , &kp AMPS , &kp AMPS )
         MAKE_MM(smm3_2 , &kp QMARK, &kp QMARK)
         MAKE_MM(smm3_3 , &kp EXCL , &kp EXCL )
-        MAKE_MM(smm3_4 , &kp SEMI , &kp SEMI )
-        MAKE_MM(smm3_5 , &kp COLON, &kp COLON)
+        MAKE_MM(smm3_4 , &kp COLON, &kp COLON)
+        MAKE_MM(smm3_5 , &kp SEMI , &kp SEMI )
         MAKE_MM(smm3_6 , &kp LBRC , &kp LDQT )
         MAKE_MM(smm3_7 , &kp RBRC , &kp RDQT )
         MAKE_MM(smm3_8 , &kp LBKT , &kp LSQT )
@@ -189,7 +189,7 @@
                 &none &mkp MB2 &kp SPACE &mkp MB1 &none
                 &none &mkp MB1 &kp SPACE &mkp MB2 &none
                 // Row 4
-                &mo 4 &mo 3
+                &none &mo 3
                 &none &none
             >;
         };
@@ -198,32 +198,14 @@
             display-name = "NAVFUN";
             bindings = <
                 // Row 1
-                &kp F1 &kp F2 &kp F3 &kp F4 &kp F5
-                &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
+                &kp F1 &kp F2 &kp F3 &kp F4 &bootloader
+                &bootloader &none &none &none &bt BT_CLR
                 // Row 2
-                HRML(F11, END, PG_UP, PG_DN) &kp HOME
-                &kp LEFT HRMR(DOWN, UP, RIGHT, F12)
+                HRML(F5, F6, F7, F8) &none
+                &kp LEFT &ht RGUI DOWN &ht RCTRL UP &ht RALT RIGHT &none
                 // Row 3
-                &none &none &none &none &no_cheese
-                &screenshot &none &none &none &none
-                // Row 4
-                &none &none
-                &none &none
-            >;
-        };
-
-        system_layer { // 4
-            display-name = "SYSTEM";
-            bindings = <
-                // Row 1
-                &bootloader &none &none &none &none
-                &bt BT_CLR &none &none &none &bootloader
-                // Row 2
-                &none &none &none &none &none
+                &kp F9 &kp F10 &kp F11 &kp F12 &none
                 &bt BT_SEL 4 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
-                // Row 3
-                &none &none &none &none &none
-                &none &none &none &none &none
                 // Row 4
                 &none &none
                 &none &none
@@ -233,6 +215,22 @@
 
     combos {
         compatible = "zmk,combos";
+
+        // Sleep (no_cheese)
+        combo_no_cheese {
+            timeout-ms = <50>;
+            key-positions = <0 1 2 3>;
+            bindings = <&no_cheese>;
+            layers = <0>;
+        };
+
+        // Screenshot
+        combo_screenshot {
+            timeout-ms = <50>;
+            key-positions = <6 7 8 9>;
+            bindings = <&screenshot>;
+            layers = <0>;
+        };
 
         // Esc
         combo_esc {
@@ -280,6 +278,38 @@
             key-positions = <27 28>;
             bindings = <&kp ENTER>;
             layers = <0 1>;
+        };
+
+        // Home
+        combo_home {
+            timeout-ms = <50>;
+            key-positions = <15 16 17>;
+            bindings = <&kp HOME>;
+            layers = <3>;
+        };
+
+        // End
+        combo_end {
+            timeout-ms = <50>;
+            key-positions = <16 17 18>;
+            bindings = <&kp END>;
+            layers = <3>;
+        };
+
+        // Page up
+        combo_pgup {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            bindings = <&kp PG_UP>;
+            layers = <3>;
+        };
+
+        // Page down
+        combo_pgdn {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp PG_DN>;
+            layers = <3>;
         };
     };
 };
