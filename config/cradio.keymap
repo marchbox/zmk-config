@@ -150,8 +150,8 @@
                 &kp Z &kp X &kp C &kp D &kp V
                 &kp K &kp H &kp COMMA &kp DOT &kp RS(RA(RBKT))
                 // Row 4
-                &kp ESC &lt 1 SPACE
-                &mo 2 &kp BSPC
+                &none &lt 1 SPACE
+                &lt 2 BSPC &none
             >;
         };
 
@@ -171,8 +171,8 @@
                 &smm3_0 &smm3_1 &smm3_2 &smm3_3 &smm3_4
                 &smm3_5 &smm3_6 &smm3_7 &smm3_8 &smm3_9
                 // Row 4
-                &kp SPACE &none
-                &lt 3 SPACE &kp BSPC
+                &none &none
+                &mo 3 &none
             >;
         };
 
@@ -230,6 +230,20 @@
             key-positions = <6 7 8 9>;
             bindings = <&screenshot>;
             layers = <0>;
+        };
+
+        // Space
+        combo_space_left {
+            timeout-ms = <50>;
+            key-positions = <21 22 23>;
+            bindings = <&kp SPACE>;
+            layers = <0 1>;
+        };
+        combo_space_right {
+            timeout-ms = <50>;
+            key-positions = <26 27 28>;
+            bindings = <&kp SPACE>;
+            layers = <0 1>;
         };
 
         // Esc
