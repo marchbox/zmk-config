@@ -23,6 +23,10 @@
     delay-ms = <0>;
 };
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
 #define LDQT LA(LBKT)
 #define RDQT LS(LA(LBKT))
 #define LSQT LA(RBKT)
