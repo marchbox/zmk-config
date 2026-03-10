@@ -23,10 +23,6 @@
     delay-ms = <0>;
 };
 
-&caps_word {
-    continue-list = <UNDERSCORE MINUS>;
-};
-
 #define LDQT LA(LBKT)
 #define RDQT LS(LA(LBKT))
 #define LSQT LA(RBKT)
@@ -146,7 +142,7 @@
             bindings = <
                 // Row 1
                 &kp Q &kp W &kp F &kp P &kp B
-                &kp J &kp L &kp U &kp Y &kp UNDER
+                &kp J &kp L &kp U &kp Y &kp MINUS
                 // Row 2
                 HRML(A, R, S, T) &kp G
                 &kp M HRMR(N, E, I, O)
