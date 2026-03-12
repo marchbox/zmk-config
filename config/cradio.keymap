@@ -72,16 +72,16 @@
         MAKE_HT(ht, &kp)
 
         // Hold tap: symbols
-        MAKE_MM(smm2_0_, &kp EQUAL, &kp CARET) MAKE_HT(smm2_0, &smm2_0_)
+        MAKE_MM(smm2_0_, &kp HASH , &kp DLLR ) MAKE_HT(smm2_0, &smm2_0_)
         MAKE_MM(smm2_1_, &kp MINUS, &kp UNDER) MAKE_HT(smm2_1, &smm2_1_)
-        MAKE_MM(smm2_2_, &kp PLUS , &kp STAR ) MAKE_HT(smm2_2, &smm2_2_)
+        MAKE_MM(smm2_2_, &kp EQUAL, &kp PLUS ) MAKE_HT(smm2_2, &smm2_2_)
         MAKE_MM(smm2_3_, &kp DQT  , &kp SQT  ) MAKE_HT(smm2_3, &smm2_3_)
         MAKE_MM(smm2_4 , &kp GRAVE, &kp TILDE)
         MAKE_MM(smm2_5 , &kp FSLH , &kp BSLH )
         MAKE_MM(smm2_6_, &kp LPAR , &kp AT   ) MAKE_HT(smm2_6, &smm2_6_)
-        MAKE_MM(smm2_7_, &kp RPAR , &kp HASH ) MAKE_HT(smm2_7, &smm2_7_)
-        MAKE_MM(smm2_8_, &kp LT   , &kp DLLR ) MAKE_HT(smm2_8, &smm2_8_)
-        MAKE_MM(smm2_9_, &kp GT   , &kp PRCNT) MAKE_HT(smm2_9, &smm2_9_)
+        MAKE_MM(smm2_7_, &kp RPAR , &kp STAR ) MAKE_HT(smm2_7, &smm2_7_)
+        MAKE_MM(smm2_8_, &kp LT   , &kp PRCNT) MAKE_HT(smm2_8, &smm2_8_)
+        MAKE_MM(smm2_9_, &kp GT   , &kp CARET) MAKE_HT(smm2_9, &smm2_9_)
         MAKE_MM(smm3_0 , &kp PIPE , &kp PIPE )
         MAKE_MM(smm3_1 , &kp AMPS , &kp AMPS )
         MAKE_MM(smm3_2 , &kp QMARK, &kp QMARK)
@@ -159,8 +159,8 @@
             display-name = "SYMNUM";
             bindings = <
                 // Row 1
-                &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
                 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
+                &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
                 // Row 2
                 HRM_MM(&smm2_0, LSHFT) HRM_MM(&smm2_1, LALT)
                 HRM_MM(&smm2_2, LCTRL) HRM_MM(&smm2_3, LGUI)
