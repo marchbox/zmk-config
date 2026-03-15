@@ -209,8 +209,8 @@
             display-name = "NAVFUN";
             bindings = <
                 // Row 1
-                &kp F1 &kp F2 &kp F3 &kp F4 &bootloader
-                &bootloader &none &none &none &bt BT_CLR
+                &kp F1 &kp F2 &kp F3 &kp F4 &none
+                &none &none &none &none &none
                 // Row 2
                 HRML(F5, F6, F7, F8) &none
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
@@ -334,6 +334,22 @@
             timeout-ms = <50>;
             key-positions = <17 18>;
             bindings = <&kp PG_DN>;
+            layers = <3>;
+        };
+
+        // Clear bluetooth
+        combo_bt_clr {
+            timeout-ms = <50>;
+            key-positions = <26 27 28 29>;
+            bindings = <&bt BT_CLR>;
+            layers = <3>;
+        };
+
+        // Bootloader
+        combo_bootloader {
+            timeout-ms = <50>;
+            key-positions = <4 5>;
+            bindings = <&bootloader>;
             layers = <3>;
         };
     };
