@@ -213,7 +213,7 @@
                 &bootloader &none &none &none &bt BT_CLR
                 // Row 2
                 HRML(F5, F6, F7, F8) &none
-                &kp LEFT &ht RGUI DOWN &ht RCTRL UP &ht RALT RIGHT &none
+                &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
                 // Row 3
                 &kp F9 &kp F10 &kp F11 &kp F12 &none
                 &bt BT_SEL 4 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
