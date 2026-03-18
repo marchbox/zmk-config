@@ -213,7 +213,7 @@
                 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
                 // Row 2
                 HRML(F11, PG_UP, HOME, END) &kp PG_DN
-                LEFT HRMR(DOWN, UP, RIGHT, F12)
+                &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp F12
                 // Row 3
                 &none &kp C_VOL_UP &kp C_MUTE &kp C_VOL_DN &none
                 &none &kp C_PREV &kp C_PP &kp C_NEXT &none
