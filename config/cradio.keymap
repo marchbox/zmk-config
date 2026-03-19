@@ -149,7 +149,7 @@
         compatible = "zmk,keymap";
 
         base_layer { // 0
-            display-name = "BASE";
+            display-name = "base";
             bindings = <
                 // Row 1
                 &kp Q &kp W &kp F &kp P &kp B
@@ -167,7 +167,7 @@
         };
 
         symnum_layer { // 1
-            display-name = "SYMNUM";
+            display-name = "sym";
             bindings = <
                 // Row 1
                 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
@@ -188,7 +188,7 @@
         };
 
         mouse_layer { // 2
-            display-name = "MOUSE";
+            display-name = "rat";
             bindings = <
                 // Row 1
                 &none &none &none &none &none
@@ -206,7 +206,7 @@
         };
 
         navfunc_layer { // 3
-            display-name = "NAVFUN";
+            display-name = "nav";
             bindings = <
                 // Row 1
                 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5
