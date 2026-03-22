@@ -183,7 +183,7 @@
                 &smm3_5 &smm3_6 &smm3_7 &smm3_8 &smm3_9
                 // Row 4
                 &none &none
-                &mo 3 &none
+                &lt 3 BSPC &none
             >;
         };
 
