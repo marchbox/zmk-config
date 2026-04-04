@@ -161,8 +161,8 @@
                 &kp Z &kp X &kp C &kp D &kp V
                 &kp K &kp H &kp COMMA &kp DOT &kp RSQT
                 // Row 4
-                &kp SHFT &lt 1 SPACE
-                &lt 2 BSPC &kp SHFT
+                &kp LSHFT &lt 1 SPACE
+                &lt 2 BSPC &kp RSHFT
             >;
         };
 
