@@ -161,8 +161,8 @@
                 &kp Z &kp X &kp C &kp D &kp V
                 &kp K &kp H &kp COMMA &kp DOT &kp RSQT
                 // Row 4
-                &none &lt 1 SPACE
-                &lt 2 BSPC &none
+                &kp SHFT &lt 1 SPACE
+                &lt 2 BSPC &kp SHFT
             >;
         };
 
@@ -182,8 +182,8 @@
                 &smm3_0 &smm3_1 &smm3_2 &smm3_3 &smm3_4
                 &smm3_5 &smm3_6 &smm3_7 &smm3_8 &smm3_9
                 // Row 4
-                &none &none
-                &lt 3 BSPC &none
+                &trans &none
+                &lt 3 BSPC &trans
             >;
         };
 
@@ -200,8 +200,8 @@
                 &none &mkp MB2 &kp SPACE &mkp MB1 &none
                 &none &mkp MB1 &kp SPACE &mkp MB2 &none
                 // Row 4
-                &none &mo 3
-                &none &none
+                &trans &mo 3
+                &none &trans
             >;
         };
 
@@ -218,8 +218,8 @@
                 &none &kp C_VOL_UP &kp C_MUTE &kp C_VOL_DN &none
                 &none &kp C_PREV &kp C_PP &kp C_NEXT &none
                 // Row 4
-                &none &none
-                &none &none
+                &trans &none
+                &none &trans
             >;
         };
     };
