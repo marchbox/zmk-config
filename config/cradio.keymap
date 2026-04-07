@@ -89,9 +89,9 @@
         MAKE_HT(ht, &kp)
 
         // Hold tap: symbols
-        MAKE_MM(smm2_0_, &kp HASH , &kp DLLR ) MAKE_HT(smm2_0, &smm2_0_)
-        MAKE_MM(smm2_1_, &kp MINUS, &kp UNDER) MAKE_HT(smm2_1, &smm2_1_)
-        MAKE_MM(smm2_2_, &kp EQUAL, &kp PLUS ) MAKE_HT(smm2_2, &smm2_2_)
+        MAKE_MM(smm2_0_, &kp MINUS, &kp UNDER) MAKE_HT(smm2_0, &smm2_0_)
+        MAKE_MM(smm2_1_, &kp PLUS , &kp AMPS ) MAKE_HT(smm2_1, &smm2_1_)
+        MAKE_MM(smm2_2_, &kp EQUAL, &kp PIPE ) MAKE_HT(smm2_2, &smm2_2_)
         MAKE_MM(smm2_3_, &kp DQT  , &kp SQT  ) MAKE_HT(smm2_3, &smm2_3_)
         MAKE_MM(smm2_4 , &kp COLON, &kp DOT  )
         MAKE_MM(smm2_5 , &kp SEMI , &kp COMMA)
@@ -99,8 +99,8 @@
         MAKE_MM(smm2_7_, &kp RPAR , &kp STAR ) MAKE_HT(smm2_7, &smm2_7_)
         MAKE_MM(smm2_8_, &kp LT   , &kp PRCNT) MAKE_HT(smm2_8, &smm2_8_)
         MAKE_MM(smm2_9_, &kp GT   , &kp CARET) MAKE_HT(smm2_9, &smm2_9_)
-        MAKE_MM(smm3_0 , &kp PIPE , &kp PIPE )
-        MAKE_MM(smm3_1 , &kp AMPS , &kp AMPS )
+        MAKE_MM(smm3_0 , &kp DLLR , &kp DLLR )
+        MAKE_MM(smm3_1 , &kp HASH , &kp HASH )
         MAKE_MM(smm3_2 , &kp QMARK, &kp QMARK)
         MAKE_MM(smm3_3 , &kp EXCL , &kp EXCL )
         MAKE_MM(smm3_4 , &kp GRAVE, &kp TILDE)
