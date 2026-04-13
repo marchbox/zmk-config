@@ -326,5 +326,37 @@
             bindings = <&bootloader>;
             layers = <3>;
         };
+
+        // ( ) → (|)
+        combo_pair_par {
+            timeout-ms = <50>;
+            key-position = <16 17>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            layer = <1>;
+        };
+
+        // < > → <|>
+        combo_pair_tag {
+            timeout-ms = <50>;
+            key-position = <18 19>;
+            bindings = <&kp LT &kp GT &kp LEFT>;
+            layer = <1>;
+        };
+
+        // { } → {|}
+        combo_pair_brc {
+            timeout-ms = <50>;
+            key-position = <26 27>;
+            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
+            layer = <1>;
+        };
+
+        // [ ] → [|]
+        combo_pair_bkt {
+            timeout-ms = <50>;
+            key-position = <28 29>;
+            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+            layer = <1>;
+        };
     };
 };
