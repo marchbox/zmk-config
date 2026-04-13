@@ -149,6 +149,50 @@
                 , <&kp ESC>
                 ;
         };
+
+        // ( ) → (|)
+        pair_par: macro_pair_par {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LPAR>
+                , <&kp RPAR>
+                , <&kp LEFT>
+                ;
+        };
+
+        // < > → <|>
+        pair_tag: macro_pair_tag {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LT>
+                , <&kp GT>
+                , <&kp LEFT>
+                ;
+        };
+
+        // { } → {|}
+        pair_brc: macro_pair_brc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LBRC>
+                , <&kp RBRC>
+                , <&kp LEFT>
+                ;
+        };
+
+        // [ ] → [|]
+        pair_bkt: macro_pair_bkt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LBKT>
+                , <&kp RBKT>
+                , <&kp LEFT>
+                ;
+        };
     };
 
     conditional_layers {
@@ -331,7 +375,7 @@
         combo_pair_par {
             timeout-ms = <50>;
             key-positions = <16 17>;
-            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            bindings = <&pair_par>;
             layers = <1>;
         };
 
@@ -339,7 +383,7 @@
         combo_pair_tag {
             timeout-ms = <50>;
             key-positions = <18 19>;
-            bindings = <&kp LT &kp GT &kp LEFT>;
+            bindings = <&pair_tag>;
             layers = <1>;
         };
 
@@ -347,7 +391,7 @@
         combo_pair_brc {
             timeout-ms = <50>;
             key-positions = <26 27>;
-            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
+            bindings = <&pair_brc>;
             layers = <1>;
         };
 
@@ -355,7 +399,7 @@
         combo_pair_bkt {
             timeout-ms = <50>;
             key-positions = <28 29>;
-            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+            bindings = <&pair_bkt>;
             layers = <1>;
         };
     };
