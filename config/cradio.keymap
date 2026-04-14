@@ -417,5 +417,19 @@
             bindings = <&pair_bkt>;
             layers = <1>;
         };
+
+        combo_sym_tog {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&tog 1>;
+            layers = <0 1 2>;
+        };
+
+        combo_rat_tog {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&tog 2>;
+            layers = <0 1 2>;
+        };
     };
 };
