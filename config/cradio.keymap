@@ -191,7 +191,7 @@
                 &kp K &kp H &kp COMMA &kp DOT &kp RSQT
                 // Row 4
                 &sk LSHFT &lt 1 SPACE
-                &lt 2 BSPC &sk RSHFT
+                &lt 2 BSPC &sk RCTRL
             >;
         };
 
