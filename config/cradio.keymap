@@ -226,8 +226,8 @@
                 &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &none
                 &none &m_l &m_d &m_r &none
                 // Row 3
-                &none &mkp MB2 &kp SPACE &mkp MB1 &none
-                &none &mkp MB1 &kp SPACE &mkp MB2 &none
+                &none &none &mkp MB2 &mkp MB1 &none
+                &none &mkp MB1 &mkp MB2 &none &none
                 // Row 4
                 &trans &trans
                 &trans &trans
@@ -333,13 +333,13 @@
             timeout-ms = <50>;
             key-positions = <21 22 23>;
             bindings = <&kp SPACE>;
-            layers = <0 1>;
+            layers = <0 1 2 3>;
         };
         combo_space_right {
             timeout-ms = <50>;
             key-positions = <26 27 28>;
             bindings = <&kp SPACE>;
-            layers = <0 1>;
+            layers = <0 1 2 3>;
         };
 
         // Caps word
