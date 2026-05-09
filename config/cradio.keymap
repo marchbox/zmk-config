@@ -191,7 +191,7 @@
                 &kp K &kp H &kp COMMA &kp DOT &kp RSQT
                 // Row 4
                 &sk LSHFT &lt 1 SPACE
-                &lt 2 BSPC &sk RCTRL
+                &lt 2 BSPC &sk RSHFT
             >;
         };
 
@@ -362,6 +362,48 @@
             key-positions = <6 7 8 9>;
             bindings = <&bootloader>;
             layers = <3>;
+        };
+
+        // GUI
+        combo_gui_left {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            bindings = <&sk LGUI>;
+            layers = <0 1 2 3>;
+        };
+        combo_gui_right {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&sk RGUI>;
+            layers = <0 1 2 3>;
+        };
+
+        // ALT
+        combo_alt_left {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&sk LALT>;
+            layers = <0 1 2 3>;
+        };
+        combo_alt_right {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&sk RALT>;
+            layers = <0 1 2 3>;
+        };
+
+        // CTRL
+        combo_ctrl_left {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&sk LCTRL>;
+            layers = <0 1 2 3>;
+        };
+        combo_ctrl_right {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&sk RCTRL>;
+            layers = <0 1 2 3>;
         };
     };
 };
