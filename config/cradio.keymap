@@ -105,32 +105,6 @@
         MAKE_MM(nmm_r, &kp RIGHT, &kp PG_UP)
         MAKE_MM(nmm_u, &kp UP   , &kp HOME )
         MAKE_MM(nmm_d, &kp DOWN , &kp END  )
-
-        // Mouse
-        m_u: mouse_up {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_UP>, <&msc SCRL_DOWN>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        m_d: mouse_down {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_DOWN>, <&msc SCRL_UP>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        m_l: mouse_left {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_LEFT>, <&msc SCRL_RIGHT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        m_r: mouse_right {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_RIGHT>, <&msc SCRL_LEFT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 
     macros {
@@ -198,11 +172,11 @@
             display-name = "nav";
             bindings = <
                 // Row 1
-                &none &none &none &none &none
-                &none &mkp MB1 &m_u &mkp MB2 &none
+                &none &none &msc SCRL_UP &none &none
+                &none &mkp MB1 &mmv MOVE_UP &mkp MB2 &none
                 // Row 2
-                &none &none &none &none &none
-                &none &m_l &m_d &m_r &none
+                &none &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &none
+                &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none
                 // Row 3
                 &none &none &none &none &none
                 &nmm_l &nmm_d &nmm_u &nmm_r &none
