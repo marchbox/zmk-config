@@ -172,10 +172,10 @@
             display-name = "nav";
             bindings = <
                 // Row 1
-                &none &none &msc SCRL_UP &none &none
+                &none &none &msc SCRL_DOWN &none &none
                 &none &mkp MB1 &mmv MOVE_UP &mkp MB2 &none
                 // Row 2
-                &none &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &none
+                &none &msc SCRL_RIGHT &msc SCRL_UP &msc SCRL_LEFT &none
                 &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none
                 // Row 3
                 &none &none &none &none &none
