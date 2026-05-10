@@ -202,7 +202,7 @@
                 &none &none &m_u &mkp MB2 &none
                 // Row 2
                 &none &none &none &none &none
-                &mkp MB1 &m_l &m_d &m_r &sk RALT
+                &mkp MB1 &m_l &m_d &m_r &kt RALT
                 // Row 3
                 &none &none &none &none &none
                 &nmm_l &nmm_d &nmm_u &nmm_r &none
