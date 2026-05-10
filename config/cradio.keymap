@@ -111,25 +111,25 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_UP>, <&msc SCRL_DOWN>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LSHFT|MOD_RSHFT)>;
         };
         m_d: mouse_down {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_DOWN>, <&msc SCRL_UP>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LSHFT|MOD_RSHFT)>;
         };
         m_l: mouse_left {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_LEFT>, <&msc SCRL_RIGHT>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LSHFT|MOD_RSHFT)>;
         };
         m_r: mouse_right {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_RIGHT>, <&msc SCRL_LEFT>;
-            mods = <(MOD_LALT|MOD_RALT)>;
+            mods = <(MOD_LSHFT|MOD_RSHFT)>;
         };
     };
 
@@ -202,7 +202,7 @@
                 &none &mkp MB1 &m_u &mkp MB2 &none
                 // Row 2
                 &none &none &none &none &none
-                &none &m_l &m_d &m_r &kt RALT
+                &none &m_l &m_d &m_r &none
                 // Row 3
                 &none &none &none &none &none
                 &nmm_l &nmm_d &nmm_u &nmm_r &none
