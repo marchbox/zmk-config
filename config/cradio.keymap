@@ -98,38 +98,6 @@
         MAKE_MM(smm3_7, &kp RBRC , &kp RDQT )
         MAKE_MM(smm3_8, &kp LBKT , &kp LSQT )
         MAKE_MM(smm3_9, &kp RBKT , &kp RSQT )
-
-        // Morph mods: navs
-        MAKE_MM(nmm_l, &kp LEFT , &kp PG_DN)
-        MAKE_MM(nmm_r, &kp RIGHT, &kp PG_UP)
-        MAKE_MM(nmm_u, &kp UP   , &kp HOME )
-        MAKE_MM(nmm_d, &kp DOWN , &kp END  )
-
-        // Mouse
-        m_u: mouse_up {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_UP>, <&msc SCRL_DOWN>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-        m_d: mouse_down {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_DOWN>, <&msc SCRL_UP>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-        m_l: mouse_left {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_LEFT>, <&msc SCRL_RIGHT>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-        m_r: mouse_right {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mmv MOVE_RIGHT>, <&msc SCRL_LEFT>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
     };
 
     macros {
@@ -198,13 +166,13 @@
             bindings = <
                 // Row 1
                 &none &none &none &none &none
-                &none &none &m_u &mkp MB2 &none
+                &none &kp PG_DN &kp PG_UP &none &none
                 // Row 2
                 &none &none &none &none &none
-                &mkp MB1 &m_l &m_d &m_r &kt RALT
+                &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
                 // Row 3
                 &none &none &none &none &none
-                &nmm_l &nmm_d &nmm_u &nmm_r &none
+                &none &kp END &kp HOME &none &none
                 // Row 4
                 &trans &trans
                 &trans &trans
