@@ -325,13 +325,13 @@
 
         // ALT
         combo_alt_left {
-            timeout-ms = <20>;
+            timeout-ms = <40>;
             key-positions = <10 11>;
             bindings = <&sk LALT>;
             layers = <0 1 2 3>;
         };
         combo_alt_right {
-            timeout-ms = <20>;
+            timeout-ms = <40>;
             key-positions = <18 19>;
             bindings = <&sk RALT>;
             layers = <0 1 3>;
