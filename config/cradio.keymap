@@ -314,27 +314,27 @@
             timeout-ms = <20>;
             key-positions = <12 13>;
             bindings = <&sk LGUI>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2>;
         };
         combo_gui_right {
             timeout-ms = <20>;
             key-positions = <16 17>;
             bindings = <&sk RGUI>;
-            layers = <0 1 3>;
+            layers = <0 1>;
         };
 
         // ALT
         combo_alt_left {
             timeout-ms = <40>;
-            key-positions = <10 11>;
+            key-positions = <11 13>;
             bindings = <&sk LALT>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2>;
         };
         combo_alt_right {
             timeout-ms = <40>;
-            key-positions = <18 19>;
+            key-positions = <16 18>;
             bindings = <&sk RALT>;
-            layers = <0 1 3>;
+            layers = <0 1>;
         };
 
         // CTRL
@@ -342,13 +342,13 @@
             timeout-ms = <20>;
             key-positions = <22 23>;
             bindings = <&sk LCTRL>;
-            layers = <0 1 2 3>;
+            layers = <0 1 2>;
         };
         combo_ctrl_right {
             timeout-ms = <20>;
             key-positions = <26 27>;
             bindings = <&sk RCTRL>;
-            layers = <0 1 3>;
+            layers = <0 1>;
         };
     };
 };
