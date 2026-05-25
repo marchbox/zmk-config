@@ -93,7 +93,7 @@
         MAKE_MM(wmm2_5, &kp SEMI , &kp COMMA)
         MAKE_MM(smm2_6, &kp LPAR , &kp LT   )
         MAKE_MM(smm2_7, &kp RPAR , &kp GT   )
-        MAKE_MM(smm2_8, &kp AMP  , &kp AT   )
+        MAKE_MM(smm2_8, &kp AMPS , &kp AT   )
         MAKE_MM(smm2_9, &kp PIPE , &kp CARET)
         MAKE_MM(smm3_5, &kp FSLH , &kp BSLH )
         MAKE_MM(smm3_6, &kp LBKT , &kp LBRC )
