@@ -90,7 +90,7 @@
         MAKE_MM(smm3_3, &kp EXCL , &kp EXCL )
         MAKE_MM(smm3_4, &kp GRAVE, &kp TILDE)
         // Right
-        MAKE_MM(wmm2_5, &kp SEMI , &kp COMMA)
+        MAKE_MM(smm2_5, &kp SEMI , &kp COMMA)
         MAKE_MM(smm2_6, &kp LPAR , &kp LT   )
         MAKE_MM(smm2_7, &kp RPAR , &kp GT   )
         MAKE_MM(smm2_8, &kp AMPS , &kp AT   )
