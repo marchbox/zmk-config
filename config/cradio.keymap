@@ -84,8 +84,8 @@
         MAKE_MM(smm2_2, &kp EQUAL, &kp PRCNT)
         MAKE_MM(smm2_3, &kp DQT  , &kp SQT  )
         MAKE_MM(smm2_4, &kp COLON, &kp DOT  )
-        MAKE_MM(smm3_1, &kp STAR , &kp CARET)
-        MAKE_MM(smm3_0, &kp DLLR , &kp HASH )
+        MAKE_MM(smm3_0, &kp STAR , &kp CARET)
+        MAKE_MM(smm3_1, &kp DLLR , &kp HASH )
         MAKE_MM(smm3_2, &kp AMPS , &kp PIPE )
         MAKE_MM(smm3_3, &kp EXCL , &kp QMARK)
         MAKE_MM(smm3_4, &kp GRAVE, &kp TILDE)
@@ -336,7 +336,7 @@
         // HASH
         combo_hash_1 {
             timeout-ms = <20>;
-            key-positions = <21 31>;
+            key-positions = <11 21>;
             bindings = <&kp HASH>;
             layers = <1>;
         };
@@ -344,8 +344,16 @@
         // PIPE
         combo_pipe_1 {
             timeout-ms = <20>;
-            key-positions = <22 32>;
+            key-positions = <12 22>;
             bindings = <&kp PIPE>;
+            layers = <1>;
+        };
+
+        // CARET
+        combo_pipe_1 {
+            timeout-ms = <20>;
+            key-positions = <10 20>;
+            bindings = <&kp CARET>;
             layers = <1>;
         };
 
