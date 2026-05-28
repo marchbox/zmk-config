@@ -329,7 +329,7 @@
         MAKE_VC(combo_num_23, SQT  ,  3, 13, 1)
         MAKE_VC(combo_num_24, DOT  ,  4, 14, 1)
         MAKE_VC(combo_num_25, COMMA,  5, 15, 1)
-        MAKE_VC(combo_num_26, LPAC ,  6, 16, 1)
+        MAKE_VC(combo_num_26, LPAR ,  6, 16, 1)
         MAKE_VC(combo_num_27, AT   ,  7, 17, 1)
         MAKE_VC(combo_num_28, LT   ,  8, 18, 1)
         MAKE_VC(combo_num_29, GT   ,  9, 19, 1)
