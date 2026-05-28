@@ -313,13 +313,13 @@
 
         // QMARK
         combo_qmark_0 {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <17 27>;
             bindings = <&kp QMARK>;
             layers = <0>;
         };
         combo_qmark_1 {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <13 23>;
             bindings = <&kp QMARK>;
             layers = <1>;
@@ -327,7 +327,7 @@
 
         // EXCL
         combo_excl_0 {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <18 28>;
             bindings = <&kp EXCL>;
             layers = <0>;
@@ -335,7 +335,7 @@
 
         // HASH
         combo_hash_1 {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <11 21>;
             bindings = <&kp HASH>;
             layers = <1>;
@@ -343,7 +343,7 @@
 
         // PIPE
         combo_pipe_1 {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <12 22>;
             bindings = <&kp PIPE>;
             layers = <1>;
@@ -351,7 +351,7 @@
 
         // CARET
         combo_caret_1 {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <10 20>;
             bindings = <&kp CARET>;
             layers = <1>;
