@@ -37,6 +37,15 @@
         mods = <(MOD_LSFT|MOD_RSFT)>; \
     };
 
+// Make vertical combo
+#define MAKE_VC(NAME, KEY, POS1, POS2, LAYER) \
+    NAME { \
+        timeout-ms = <30>; \
+        key-positions = <POS1 POS2>; \
+        bindings = <&kp KEY>; \
+        layers = <LAYER>; \
+    };
+
 &mmv {
     acceleration-exponent = <1>;
     time-to-max-speed-ms = <550>;
@@ -311,51 +320,29 @@
             layers = <0>;
         };
 
-        // QMARK
-        combo_qmark_0 {
-            timeout-ms = <30>;
-            key-positions = <17 27>;
-            bindings = <&kp QMARK>;
-            layers = <0>;
-        };
-        combo_qmark_1 {
-            timeout-ms = <30>;
-            key-positions = <13 23>;
-            bindings = <&kp QMARK>;
-            layers = <1>;
-        };
-
-        // EXCL
-        combo_excl_0 {
-            timeout-ms = <30>;
-            key-positions = <18 28>;
-            bindings = <&kp EXCL>;
-            layers = <0>;
-        };
-
-        // HASH
-        combo_hash_1 {
-            timeout-ms = <30>;
-            key-positions = <11 21>;
-            bindings = <&kp HASH>;
-            layers = <1>;
-        };
-
-        // PIPE
-        combo_pipe_1 {
-            timeout-ms = <30>;
-            key-positions = <12 22>;
-            bindings = <&kp PIPE>;
-            layers = <1>;
-        };
-
-        // CARET
-        combo_caret_1 {
-            timeout-ms = <30>;
-            key-positions = <10 20>;
-            bindings = <&kp CARET>;
-            layers = <1>;
-        };
+        // Symbols
+        MAKE_VC(combo_abc_37, QMARK, 17, 27, 0)
+        MAKE_VC(combo_abc_38, EXCL , 18, 28, 0)
+        MAKE_VC(combo_num_20, UNDER,  0, 10, 1)
+        MAKE_VC(combo_num_21, PLUS ,  1, 11, 1)
+        MAKE_VC(combo_num_22, PRCNT,  2, 12, 1)
+        MAKE_VC(combo_num_23, SQT  ,  3, 13, 1)
+        MAKE_VC(combo_num_24, DOT  ,  4, 14, 1)
+        MAKE_VC(combo_num_25, COMMA,  5, 15, 1)
+        MAKE_VC(combo_num_26, LPAC ,  6, 16, 1)
+        MAKE_VC(combo_num_27, AT   ,  7, 17, 1)
+        MAKE_VC(combo_num_28, LT   ,  8, 18, 1)
+        MAKE_VC(combo_num_29, GT   ,  9, 19, 1)
+        MAKE_VC(combo_num_30, CARET, 10, 20, 1)
+        MAKE_VC(combo_num_31, HASH , 11, 21, 1)
+        MAKE_VC(combo_num_32, PIPE , 12, 22, 1)
+        MAKE_VC(combo_num_33, QMARK, 13, 23, 1)
+        MAKE_VC(combo_num_34, TILDE, 14, 24, 1)
+        MAKE_VC(combo_num_35, BSLH , 15, 25, 1)
+        MAKE_VC(combo_num_36, LDQT , 16, 26, 1)
+        MAKE_VC(combo_num_37, RDQT , 17, 27, 1)
+        MAKE_VC(combo_num_38, LSQT , 18, 28, 1)
+        MAKE_VC(combo_num_39, RSQT , 19, 29, 1)
 
         // GUI
         combo_gui_left {
