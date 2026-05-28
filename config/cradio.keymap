@@ -350,7 +350,7 @@
         };
 
         // CARET
-        combo_pipe_1 {
+        combo_caret_1 {
             timeout-ms = <20>;
             key-positions = <10 20>;
             bindings = <&kp CARET>;
