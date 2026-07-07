@@ -113,22 +113,22 @@
 
         // Morph mods: symbols
         // Left
-        MAKE_MM(smr2_0_, &kp MINUS, &kp UNDER) MAKE_HT(smr2_0, &smr2_0_, KEY_R)
-        MAKE_MM(smr2_1_, &kp PLUS , &kp PLUS ) MAKE_HT(smr2_1, &smr2_1_, KEY_R)
-        MAKE_MM(smr2_2_, &kp EQUAL, &kp PRCNT) MAKE_HT(smr2_2, &smr2_2_, KEY_R)
-        MAKE_MM(smr2_3_, &kp DQT  , &kp SQT  ) MAKE_HT(smr2_3, &smr2_3_, KEY_R)
-        MAKE_MM(smr2_4 , &kp COLON, &kp DOT  )
-        MAKE_MM(smr3_0 , &kp STAR , &kp CARET)
-        MAKE_MM(smr3_1 , &kp DLLR , &kp HASH )
-        MAKE_MM(smr3_2 , &kp AMPS , &kp PIPE )
-        MAKE_MM(smr3_3 , &kp EXCL , &kp QMARK)
-        MAKE_MM(smr3_4 , &kp GRAVE, &kp TILDE)
+        MAKE_MM(smm2_0_, &kp MINUS, &kp UNDER) MAKE_HT(smm2_0, &smm2_0_, KEYS_R)
+        MAKE_MM(smm2_1_, &kp PLUS , &kp PLUS ) MAKE_HT(smm2_1, &smm2_1_, KEYS_R)
+        MAKE_MM(smm2_2_, &kp EQUAL, &kp PRCNT) MAKE_HT(smm2_2, &smm2_2_, KEYS_R)
+        MAKE_MM(smm2_3_, &kp DQT  , &kp SQT  ) MAKE_HT(smm2_3, &smm2_3_, KEYS_R)
+        MAKE_MM(smm2_4 , &kp COLON, &kp DOT  )
+        MAKE_MM(smm3_0 , &kp STAR , &kp CARET)
+        MAKE_MM(smm3_1 , &kp DLLR , &kp HASH )
+        MAKE_MM(smm3_2 , &kp AMPS , &kp PIPE )
+        MAKE_MM(smm3_3 , &kp EXCL , &kp QMARK)
+        MAKE_MM(smm3_4 , &kp GRAVE, &kp TILDE)
         // Right
-        MAKE_MM(smr2_5 , &kp SEMI , &kp COMMA)
-        MAKE_MM(smr2_6_, &kp LPAR , &kp LPAR ) MAKE_HT(smr2_6, &smr2_6_, KEY_L)
-        MAKE_MM(smr2_7_, &kp RPAR , &kp AT   ) MAKE_HT(smr2_7, &smr2_7_, KEY_L)
-        MAKE_MM(smr2_8_, &kp LT   , &kp LT   ) MAKE_HT(smr2_8, &smr2_8_, KEY_L)
-        MAKE_MM(smr2_9_, &kp GT   , &kp GT   ) MAKE_HT(smr2_9, &smr2_9_, KEY_L)
+        MAKE_MM(smm2_5 , &kp SEMI , &kp COMMA)
+        MAKE_MM(smm2_6_, &kp LPAR , &kp LPAR ) MAKE_HT(smm2_6, &smm2_6_, KEYS_L)
+        MAKE_MM(smm2_7_, &kp RPAR , &kp AT   ) MAKE_HT(smm2_7, &smm2_7_, KEYS_L)
+        MAKE_MM(smm2_8_, &kp LT   , &kp LT   ) MAKE_HT(smm2_8, &smm2_8_, KEYS_L)
+        MAKE_MM(smm2_9_, &kp GT   , &kp GT   ) MAKE_HT(smm2_9, &smm2_9_, KEYS_L)
         MAKE_MM(smm3_5 , &kp FSLH , &kp BSLH )
         MAKE_MM(smm3_6 , &kp LBRC , &kp LDQT )
         MAKE_MM(smm3_7 , &kp RBRC , &kp RDQT )
@@ -186,8 +186,11 @@
                 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
                 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
                 // Row 2
-                &smm2_0 &smm2_1 &smm2_2 &smm2_3 &smm2_4
-                &smm2_5 &smm2_6 &smm2_7 &smm2_8 &smm2_9
+                HRM_MM(&smm2_0, LSHFT) HRM_MM(&smm2_1, LALT)
+                HRM_MM(&smm2_2, LCTRL) HRM_MM(&smm2_3, LGUI)
+                &smm2_4 &smm2_5
+                HRM_MM(&smm2_6, RGUI) HRM_MM(&smm2_7, RCTRL)
+                HRM_MM(&smm2_8, RALT) HRM_MM(&smm2_9, RSHFT)
                 // Row 3
                 &smm3_0 &smm3_1 &smm3_2 &smm3_3 &smm3_4
                 &smm3_5 &smm3_6 &smm3_7 &smm3_8 &smm3_9
