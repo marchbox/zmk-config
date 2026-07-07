@@ -28,6 +28,10 @@
 #define LSQT RA(RBKT)
 #define RSQT RS(RA(RBKT))
 
+// Home row mods macro
+#define HRML(k1,k2,k3,k4) &hrml LSHFT k1 &hrml LALT k2 &hrml LCTRL k3 &hrml LGUI k4
+#define HRMR(k1,k2,k3,k4) &hrmr RGUI k1 &hrmr RCTRL k2 &hrmr RALT k3 &hrmr RSHFT k4
+
 // Make mod-morph macro
 #define MAKE_MM(NAME, MAIN, SHIFTED) \
     NAME: NAME { \
@@ -36,6 +40,23 @@
         bindings = <MAIN>, <SHIFTED>; \
         mods = <(MOD_LSFT|MOD_RSFT)>; \
     };
+
+// Make hold-tap with mod-morph macro
+#define MAKE_HT(NAME, TAP, KEYS) \
+    NAME: NAME { \
+        compatible = "zmk,behavior-hold-tap"; \
+        #binding-cells = <2>; \
+        flavor = "balanced"; \
+        require-prior-idle-ms = <150>; \
+        tapping-term-ms = <280>; \
+        quick-tap-ms = <175>; \
+        bindings = <&kp>, <TAP>; \
+        hold-trigger-key-positions = <KEYS>; \
+        hold-trigger-on-release; \
+    };
+
+// Home row mod key with mod-morph behavior
+#define HRM_MM(MM, MOD) MM MOD 0
 
 // Make vertical combo
 #define MAKE_VC(NAME, KEY, POS1, POS2, LAYER) \
@@ -86,29 +107,33 @@
             bindings = <&mo>, <&kp>;
         };
 
+        // Home row mods
+        MAKE_HT(hrml, &kp, KEYS_R)
+        MAKE_HT(hrmr, &kp, KEYS_L)
+
         // Morph mods: symbols
         // Left
-        MAKE_MM(smm2_0, &kp MINUS, &kp UNDER)
-        MAKE_MM(smm2_1, &kp PLUS , &kp PLUS )
-        MAKE_MM(smm2_2, &kp EQUAL, &kp PRCNT)
-        MAKE_MM(smm2_3, &kp DQT  , &kp SQT  )
-        MAKE_MM(smm2_4, &kp COLON, &kp DOT  )
-        MAKE_MM(smm3_0, &kp STAR , &kp CARET)
-        MAKE_MM(smm3_1, &kp DLLR , &kp HASH )
-        MAKE_MM(smm3_2, &kp AMPS , &kp PIPE )
-        MAKE_MM(smm3_3, &kp EXCL , &kp QMARK)
-        MAKE_MM(smm3_4, &kp GRAVE, &kp TILDE)
+        MAKE_MM(smr2_0_, &kp MINUS, &kp UNDER) MAKE_HT(smr2_0, &smr2_0_, KEY_R)
+        MAKE_MM(smr2_1_, &kp PLUS , &kp PLUS ) MAKE_HT(smr2_1, &smr2_1_, KEY_R)
+        MAKE_MM(smr2_2_, &kp EQUAL, &kp PRCNT) MAKE_HT(smr2_2, &smr2_2_, KEY_R)
+        MAKE_MM(smr2_3_, &kp DQT  , &kp SQT  ) MAKE_HT(smr2_3, &smr2_3_, KEY_R)
+        MAKE_MM(smr2_4 , &kp COLON, &kp DOT  )
+        MAKE_MM(smr3_0 , &kp STAR , &kp CARET)
+        MAKE_MM(smr3_1 , &kp DLLR , &kp HASH )
+        MAKE_MM(smr3_2 , &kp AMPS , &kp PIPE )
+        MAKE_MM(smr3_3 , &kp EXCL , &kp QMARK)
+        MAKE_MM(smr3_4 , &kp GRAVE, &kp TILDE)
         // Right
-        MAKE_MM(smm2_5, &kp SEMI , &kp COMMA)
-        MAKE_MM(smm2_6, &kp LPAR , &kp LPAR )
-        MAKE_MM(smm2_7, &kp RPAR , &kp AT   )
-        MAKE_MM(smm2_8, &kp LT   , &kp LT   )
-        MAKE_MM(smm2_9, &kp GT   , &kp GT   )
-        MAKE_MM(smm3_5, &kp FSLH , &kp BSLH )
-        MAKE_MM(smm3_6, &kp LBRC , &kp LDQT )
-        MAKE_MM(smm3_7, &kp RBRC , &kp RDQT )
-        MAKE_MM(smm3_8, &kp LBKT , &kp LSQT )
-        MAKE_MM(smm3_9, &kp RBKT , &kp RSQT )
+        MAKE_MM(smr2_5 , &kp SEMI , &kp COMMA)
+        MAKE_MM(smr2_6_, &kp LPAR , &kp LPAR ) MAKE_HT(smr2_6, &smr2_6_, KEY_L)
+        MAKE_MM(smr2_7_, &kp RPAR , &kp AT   ) MAKE_HT(smr2_7, &smr2_7_, KEY_L)
+        MAKE_MM(smr2_8_, &kp LT   , &kp LT   ) MAKE_HT(smr2_8, &smr2_8_, KEY_L)
+        MAKE_MM(smr2_9_, &kp GT   , &kp GT   ) MAKE_HT(smr2_9, &smr2_9_, KEY_L)
+        MAKE_MM(smm3_5 , &kp FSLH , &kp BSLH )
+        MAKE_MM(smm3_6 , &kp LBRC , &kp LDQT )
+        MAKE_MM(smm3_7 , &kp RBRC , &kp RDQT )
+        MAKE_MM(smm3_8 , &kp LBKT , &kp LSQT )
+        MAKE_MM(smm3_9 , &kp RBKT , &kp RSQT )
     };
 
     macros {
@@ -182,7 +207,7 @@
                 &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &none
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
                 // Row 3
-                &none &none &none &none &none
+                &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &none
                 &none &kp END &kp HOME &none &none
                 // Row 4
                 &trans &trans
