@@ -23,10 +23,12 @@
     25 26 27 28 29 \
     32 33
 
-#define LDQT RA(LBKT)
-#define RDQT RS(RA(LBKT))
-#define LSQT RA(RBKT)
-#define RSQT RS(RA(RBKT))
+#define LDQT  RA(LBKT)
+#define RDQT  RS(RA(LBKT))
+#define LSQT  RA(RBKT)
+#define RSQT  RS(RA(RBKT))
+#define NDASH RA(MINUS)
+#define MDASH RS(RA(MINUS))
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &hrml LSHFT k1 &hrml LALT k2 &hrml LCTRL k3 &hrml LGUI k4
@@ -103,7 +105,11 @@
         MAKE_HT(hrmr, &kp, KEYS_L)
 
         // Morph mods: symbols
-        // Left
+        // abc
+        MAKE_MM(smm_comma, &kp COMMA, &kp QMARK)
+        MAKE_MM(smm_dot  , &kp DOT  , &kp EXCL )
+        MAKE_MM(smm_rsqt , &kp RSQT , &kp NDASH)
+        // num left
         MAKE_MM(smm2_0_, &kp MINUS, &kp UNDER) MAKE_HT(smm2_0, &smm2_0_, KEYS_R)
         MAKE_MM(smm2_1_, &kp PLUS , &kp PLUS ) MAKE_HT(smm2_1, &smm2_1_, KEYS_R)
         MAKE_MM(smm2_2_, &kp EQUAL, &kp PRCNT) MAKE_HT(smm2_2, &smm2_2_, KEYS_R)
@@ -114,7 +120,7 @@
         MAKE_MM(smm3_2 , &kp AMPS , &kp PIPE )
         MAKE_MM(smm3_3 , &kp EXCL , &kp QMARK)
         MAKE_MM(smm3_4 , &kp GRAVE, &kp TILDE)
-        // Right
+        // num right
         MAKE_MM(smm2_5 , &kp SEMI , &kp COMMA)
         MAKE_MM(smm2_6_, &kp LPAR , &kp LPAR ) MAKE_HT(smm2_6, &smm2_6_, KEYS_L)
         MAKE_MM(smm2_7_, &kp RPAR , &kp AT   ) MAKE_HT(smm2_7, &smm2_7_, KEYS_L)
@@ -163,7 +169,7 @@
                 &kp M HRMR(N, E, I, O)
                 // Row 3
                 &kp Z &kp X &kp C &kp D &kp V
-                &kp K &kp H &kp COMMA &kp DOT &kp RSQT
+                &kp K &kp H &smm_comma &smm_dot &smm_rsqt
                 // Row 4
                 &sk LSHFT &lt 1 SPACE
                 &lt 2 BSPC &sk RSHFT
