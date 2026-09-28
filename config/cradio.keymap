@@ -210,7 +210,7 @@
                 &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &kp RG(RS(RA(V)))
                 &none &kp END &kp HOME &none &none
                 // Row 4
-                &trans &trans
+                &lt 4 &trans
                 &trans &trans
             >;
         };
@@ -230,6 +230,24 @@
                 // Row 4
                 &trans &trans
                 &trans &trans
+            >;
+        };
+
+        rat_layer { // 4
+            display-name = "rat";
+            bindings = <
+                // Row 1
+                &none &none &none &none &none
+                &none &none &mmv MOVE_UP &none &none
+                // Row 2
+                &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &none
+                &msc SCRL_UP &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none
+                // Row 3
+                &none &none &none &none &none
+                &msc SCRL_DOWN &mkp LCLK &mkp MCLK &mkp RCLK &none
+                // Row 4
+                &none &none
+                &none &none
             >;
         };
     };
