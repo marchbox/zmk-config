@@ -11,6 +11,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+// Layers
+#define LAYER_DEF 0
+#define LAYER_SYM 1
+#define LAYER_NAV 2
+#define LAYER_FUN 3
+#define LAYER_RAT 4
+
 #define KEYS_L \
      0  1  2  3  4 \
     10 11 12 13 14 \
@@ -150,15 +157,15 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <LAYER_SYM LAYER_NAV>;
+            then-layer = <LAYER_FUN>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        abc_layer { // 0
+        abc_layer { // LAYER_DEF
             display-name = "abc";
             bindings = <
                 // Row 1
@@ -171,12 +178,12 @@
                 &kp Z &kp X &kp C &kp D &kp V
                 &kp K &kp H &smm_comma &smm_dot &smm_rsqt
                 // Row 4
-                &sk LSHFT &lt 1 SPACE
-                &lt 2 BSPC &sk RCTRL
+                &sk LSHFT &lt LAYER_SYM SPACE
+                &lt LAYER_NAV BSPC &sk RCTRL
             >;
         };
 
-        num_layer { // 1
+        num_layer { // LAYER_SYM
             display-name = "123";
             bindings = <
                 // Row 1
@@ -197,7 +204,7 @@
             >;
         };
 
-        nav_layer { // 2
+        nav_layer { // LAYER_NAV
             display-name = "nav";
             bindings = <
                 // Row 1
@@ -210,12 +217,12 @@
                 &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &kp RG(RS(RA(V)))
                 &none &kp END &kp HOME &none &none
                 // Row 4
-                &lt 4 &trans
+                &lt LAYER_RAT &trans
                 &trans &trans
             >;
         };
 
-        fun_layer { // 3
+        fun_layer { // LAYER_FUN
             display-name = "fun";
             bindings = <
                 // Row 1
@@ -233,7 +240,7 @@
             >;
         };
 
-        rat_layer { // 4
+        rat_layer { // LAYER_RAT
             display-name = "rat";
             bindings = <
                 // Row 1
