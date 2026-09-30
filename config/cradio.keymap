@@ -12,7 +12,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // Layers
-#define LAYER_DEF 0
+#define LAYER_ABC 0
 #define LAYER_SYM 1
 #define LAYER_NAV 2
 #define LAYER_FUN 3
@@ -158,14 +158,14 @@
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <LAYER_SYM LAYER_NAV>;
-            then-layer = <LAYER_FUN>;
+            then-layer = <LAYER_RAT>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        abc_layer { // LAYER_DEF
+        abc_layer { // LAYER_ABC
             display-name = "abc";
             bindings = <
                 // Row 1
@@ -183,8 +183,8 @@
             >;
         };
 
-        num_layer { // LAYER_SYM
-            display-name = "123";
+        sym_layer { // LAYER_SYM
+            display-name = "sym";
             bindings = <
                 // Row 1
                 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
@@ -217,7 +217,7 @@
                 &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &kp RG(RS(RA(V)))
                 &none &kp END &kp HOME &none &none
                 // Row 4
-                &lt LAYER_RAT &trans
+                &trans &trans
                 &trans &trans
             >;
         };
@@ -244,17 +244,17 @@
             display-name = "rat";
             bindings = <
                 // Row 1
-                &none &none &none &none &none
+                &none &none &msc SCRL_DOWN &none &none
                 &none &none &mmv MOVE_UP &none &none
                 // Row 2
-                &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &none
-                &msc SCRL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none
+                &none &msc SCRL_RIGHT &msc SCRL_UP &msc SCRL_LEFT &none
+                &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none
                 // Row 3
-                &none &none &none &none &none
-                &msc SCRL_UP &mkp LCLK &mkp MCLK &mkp RCLK &none
+                &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &none
+                &none &mkp LCLK &mkp MCLK &mkp RCLK &none
                 // Row 4
-                &none &none
-                &none &none
+                &trans &trans
+                &trans &trans
             >;
         };
     };
@@ -262,18 +262,26 @@
     combos {
         compatible = "zmk,combos";
 
+        // Function layer
+        combo_fun_layer {
+            timeout-ms = <50>;
+            key-positions = <30 33>;
+            bindings = <&mo LAYER_FUN>;
+            layers = <LAYER_ABC>;
+        };
+
         // Bootloader
         combo_bootloader_left {
             timeout-ms = <50>;
             key-positions = <0 1 2 3>;
             bindings = <&bootloader>;
-            layers = <3>;
+            layers = <LAYER_FUN>;
         };
         combo_bootloader_right {
             timeout-ms = <50>;
             key-positions = <6 7 8 9>;
             bindings = <&bootloader>;
-            layers = <3>;
+            layers = <LAYER_FUN>;
         };
 
         // Sleep (no_cheese)
@@ -281,7 +289,7 @@
             timeout-ms = <50>;
             key-positions = <0 1 2 3>;
             bindings = <&no_cheese>;
-            layers = <0>;
+            layers = <LAYER_ABC>;
         };
 
         // Screenshot
@@ -289,7 +297,7 @@
             timeout-ms = <50>;
             key-positions = <6 7 8 9>;
             bindings = <&screenshot>;
-            layers = <0>;
+            layers = <LAYER_ABC>;
         };
 
         // Spotlight
@@ -297,7 +305,7 @@
             timeout-ms = <50>;
             key-positions = <20 21 22 23>;
             bindings = <&kp LG(SPACE)>;
-            layers = <0>;
+            layers = <LAYER_ABC>;
         };
 
         // Mute
@@ -305,7 +313,7 @@
             timeout-ms = <50>;
             key-positions = <26 27 28 29>;
             bindings = <&kp C_MUTE>;
-            layers = <0>;
+            layers = <LAYER_ABC>;
         };
 
         // Esc
@@ -313,7 +321,7 @@
             timeout-ms = <20>;
             key-positions = <1 2>;
             bindings = <&kp ESC>;
-            layers = <0 1>;
+            layers = <LAYER_ABC LAYER_SYM>;
         };
 
         // Del
@@ -321,7 +329,7 @@
             timeout-ms = <20>;
             key-positions = <7 8>;
             bindings = <&kp DEL>;
-            layers = <0 1>;
+            layers = <LAYER_ABC LAYER_SYM>;
         };
 
         // Tab
@@ -329,7 +337,7 @@
             timeout-ms = <20>;
             key-positions = <11 12>;
             bindings = <&kp TAB>;
-            layers = <0 1>;
+            layers = <LAYER_ABC LAYER_SYM>;
         };
 
         // Backspace
@@ -337,7 +345,7 @@
             timeout-ms = <20>;
             key-positions = <17 18>;
             bindings = <&kp BSPC>;
-            layers = <0 1>;
+            layers = <LAYER_ABC LAYER_SYM>;
         };
 
         // Enter
@@ -345,7 +353,7 @@
             timeout-ms = <20>;
             key-positions = <27 28>;
             bindings = <&kp ENTER>;
-            layers = <0 1>;
+            layers = <LAYER_ABC LAYER_SYM>;
         };
 
         // Space
@@ -353,13 +361,13 @@
             timeout-ms = <30>;
             key-positions = <21 22 23>;
             bindings = <&kp SPACE>;
-            layers = <0 1>;
+            layers = <LAYER_ABC LAYER_SYM>;
         };
         combo_space_right {
             timeout-ms = <30>;
             key-positions = <26 27 28>;
             bindings = <&kp SPACE>;
-            layers = <0 1>;
+            layers = <LAYER_ABC LAYER_SYM>;
         };
 
         // Caps word
@@ -367,7 +375,7 @@
             timeout-ms = <20>;
             key-positions = <21 22>;
             bindings = <&caps_word>;
-            layers = <0>;
+            layers = <LAYER_ABC>;
         };
     };
 };
