@@ -251,7 +251,7 @@
                 &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none
                 // Row 3
                 &none &mkp RCLK &mkp MCLK &mkp LCLK &none
-                &kp LGUI &kp LCTRL &kp LALT &kp LSHFT &none
+                &none &kp LGUI &kp LCTRL &kp LALT &kp LSHFT
                 // Row 4
                 &trans &trans
                 &trans &trans
