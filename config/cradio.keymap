@@ -57,6 +57,15 @@
         hold-trigger-on-release; \
     };
 
+#define MAKE_COMBO(NAME, KEYS, BINDING, LAYERS) \
+    NAME { \
+        timeout-ms = <50>; \
+        slow-release; \
+        key-positions = <KEYS>; \
+        bindings = <BINDING>; \
+        layers = <LAYERS>; \
+    };
+
 &mmv {
     acceleration-exponent = <1>;
     time-to-max-speed-ms = <550>;
@@ -262,290 +271,68 @@
         };
 
         // Bootloader
-        combo_bootloader_left {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <0 1 2 3>;
-            bindings = <&bootloader>;
-            layers = <LAYER_FUN>;
-        };
+        MAKE_COMBO(combo_bootloader_left, 0 1 2 3, &bootloader, LAYER_FUN)
 
         // Sleep (no_cheese)
-        combo_no_cheese {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <0 1 2 3>;
-            bindings = <&no_cheese>;
-            layers = <LAYER_ABC>;
-        };
+        MAKE_COMBO(combo_no_cheese, 0 1 2 3, &no_cheese, LAYER_ABC)
 
         // Screenshot
-        combo_screenshot {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <6 7 8 9>;
-            bindings = <&screenshot>;
-            layers = <LAYER_ABC>;
-        };
+        MAKE_COMBO(combo_screenshot, 6 7 8 9, &screenshot, LAYER_ABC)
 
         // Spotlight
-        combo_spotlight {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <20 21 22 23>;
-            bindings = <&kp LG(SPACE)>;
-            layers = <LAYER_ABC>;
-        };
+        MAKE_COMBO(combo_spotlight, 20 21 22 23, &kp LG(SPACE), LAYER_ABC)
 
         // Mute
-        combo_mute {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <26 27 28 29>;
-            bindings = <&kp C_MUTE>;
-            layers = <LAYER_ABC>;
-        };
+        MAKE_COMBO(combo_mute, 26 27 28 29, &kp C_MUTE, LAYER_ABC)
 
         // Esc
-        combo_esc {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <1 2>;
-            bindings = <&kp ESC>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
+        MAKE_COMBO(combo_esc, 1 2, &kp ESC, LAYER_ABC LAYER_SYM)
 
         // Del
-        combo_del {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <7 8>;
-            bindings = <&kp DEL>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
+        MAKE_COMBO(combo_del, 7 8, &kp DEL, LAYER_ABC LAYER_SYM)
 
         // Tab
-        combo_tab {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <11 12>;
-            bindings = <&as TAB>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
+        MAKE_COMBO(combo_tab, 11 12, &as TAB, LAYER_ABC LAYER_SYM)
 
         // Backspace
-        combo_bspc {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <17 18>;
-            bindings = <&kp BSPC>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
+        MAKE_COMBO(combo_bspc, 17 18, &kp BSPC, LAYER_ABC LAYER_SYM)
 
         // Enter
-        combo_enter {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <27 28>;
-            bindings = <&kp ENTER>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
+        MAKE_COMBO(combo_enter, 27 28, &kp ENTER, LAYER_ABC LAYER_SYM)
 
         // Space
-        combo_space_left {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <21 22 23>;
-            bindings = <&kp SPACE>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_space_right {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <26 27 28>;
-            bindings = <&kp SPACE>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
+        MAKE_COMBO(combo_space_left,  21 22 23, &kp SPACE, LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_space_right, 26 27 28, &kp SPACE, LAYER_ABC LAYER_SYM)
 
         // Caps word
-        combo_cap {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <21 22>;
-            bindings = <&caps_word>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
+        MAKE_COMBO(combo_cap, 21 22, &caps_word, LAYER_ABC LAYER_SYM)
 
         // Symbols
-        combo_amper {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <0 1>;
-            bindings = <&as AMPS>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_colon {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <2 3>;
-            bindings = <&as COLON>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_ldquote {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <3 4>;
-            bindings = <&as LDQT>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_star {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <5 6>;
-            bindings = <&as STAR>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_semi {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <6 7>;
-            bindings = <&as SEMI>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_pipe {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <8 9>;
-            bindings = <&as PIPE>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_percent {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <10 11>;
-            bindings = <&as PRCNT>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_dquote {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <12 13>;
-            bindings = <&as DQT>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_grave {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <13 14>;
-            bindings = <&as GRAVE>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_lbracket {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <15 16>;
-            bindings = <&as LBKT>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_lparen {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <16 17>;
-            bindings = <&as LPAR>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_less {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <18 19>;
-            bindings = <&as LT>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_dollar {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <20 21>;
-            bindings = <&as DLLR>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_equal {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <22 23>;
-            bindings = <&as EQUAL>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_lsquote {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <23 24>;
-            bindings = <&as LSQT>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_slash {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <25 26>;
-            bindings = <&as FSLH>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_lbrace {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <26 27>;
-            bindings = <&as LBRC>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_hash {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <28 29>;
-            bindings = <&as HASH>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
+        MAKE_COMBO(combo_amper,     0 1,   &as AMPS,  LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_colon,     2 3,   &as COLON, LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_ldquote,   3 4,   &as LDQT,  LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_star,      5 6,   &as STAR,  LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_semi,      6 7,   &as SEMI,  LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_pipe,      8 9,   &as PIPE,  LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_percent,  10 11,  &as PRCNT, LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_dquote,   12 13,  &as DQT,   LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_grave,    13 14,  &as GRAVE, LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_lbracket, 15 16,  &as LBKT,  LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_lparen,   16 17,  &as LPAR,  LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_less,     18 19,  &as LT,    LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_dollar,   20 21,  &as DLLR,  LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_equal,    22 23,  &as EQUAL, LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_lsquote,  23 24,  &as LSQT,  LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_slash,    25 26,  &as FSLH,  LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_lbrace,   26 27,  &as LBRC,  LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_hash,     28 29,  &as HASH,  LAYER_ABC LAYER_SYM)
 
         // Navigation
-        combo_end {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <1 3>;
-            bindings = <&kp END>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_home {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <6 8>;
-            bindings = <&kp HOME>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_left {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <11 13>;
-            bindings = <&kp LEFT>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_up {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <16 18>;
-            bindings = <&kp UP>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_right {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <21 23>;
-            bindings = <&kp RIGHT>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
-        combo_down {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <26 28>;
-            bindings = <&kp DOWN>;
-            layers = <LAYER_ABC LAYER_SYM>;
-        };
+        MAKE_COMBO(combo_end,    1 3,   &kp END,   LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_home,   6 8,   &kp HOME,  LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_left,  11 13,  &kp LEFT,  LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_up,    16 18,  &kp UP,    LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_right, 21 23,  &kp RIGHT, LAYER_ABC LAYER_SYM)
+        MAKE_COMBO(combo_down,  26 28,  &kp DOWN,  LAYER_ABC LAYER_SYM)
     };
 };
