@@ -40,6 +40,8 @@
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &hrml LSHFT k1 &hrml LALT k2 &hrml LCTRL k3 &hrml LGUI k4
 #define HRMR(k1,k2,k3,k4) &hrmr RGUI k1 &hrmr RCTRL k2 &hrmr RALT k3 &hrmr RSHFT k4
+#define SHRML(k1,k2,k3,k4) &shrml LSHFT k1 &shrml LALT k2 &shrml LCTRL k3 &shrml LGUI k4
+#define SHRMR(k1,k2,k3,k4) &shrmr RGUI k1 &shrmr RCTRL k2 &shrmr RALT k3 &shrmr RSHFT k4
 
 // Make home row hold-tap macro
 #define MAKE_HT(NAME, TAP, KEYS, TERM) \
@@ -126,10 +128,10 @@
         };
 
         // Home row mods
-        // Sebastian's RETRO_SHIFT keeps Auto Shift mod-taps undecided for 500ms.
-        MAKE_HT(hrml, &as, KEYS_R, 500)
-        MAKE_HT(hrmr, &as, KEYS_L, 500)
-        MAKE_HT(fhrmr, &kp, KEYS_L, 175)
+        MAKE_HT(shrml, &as, KEYS_R, 500)
+        MAKE_HT(shrmr, &as, KEYS_L, 500)
+        MAKE_HT(hrml, &kp, KEYS_R, 175)
+        MAKE_HT(hrmr, &kp, KEYS_L, 175)
     };
 
     macros {
@@ -164,8 +166,8 @@
                 &as Q &as W &as F &as P &as B
                 &as J &as L &as U &as Y &as MINUS
                 // Row 2
-                HRML(A, R, S, T) &as G
-                &as M HRMR(N, E, I, O)
+                SHRML(A, R, S, T) &as G
+                &as M SHRMR(N, E, I, O)
                 // Row 3
                 &as Z &as X &as C &as D &as V
                 &as K &as H &as COMMA &as DOT &as RSQT
@@ -182,8 +184,8 @@
                 &as N1 &as N2 &as N3 &as N4 &as N5
                 &as N6 &as N7 &as N8 &as N9 &as N0
                 // Row 2
-                HRML(PRCNT, MINUS, EQUAL, DQT) &as COLON
-                &as SEMI HRMR(LPAR, LBRC, LBKT, LT)
+                SHRML(PRCNT, MINUS, EQUAL, DQT) &as COLON
+                &as SEMI SHRMR(LPAR, LBRC, LBKT, LT)
                 // Row 3
                 &as STAR &as PIPE &as AMPS &as EXCL &as GRAVE
                 &as FSLH &as DLLR &as HASH &as LDQT &as LSQT
@@ -219,7 +221,7 @@
                 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
                 // Row 2
                 &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &kp F11
-                &kp F12 &fhrmr RGUI C_VOL_DN &fhrmr RCTRL C_MUTE &fhrmr RALT C_VOL_UP &kp RSHFT
+                &kp F12 &hrmr RGUI C_VOL_DN &hrmr RCTRL C_MUTE &hrmr RALT C_VOL_UP &kp RSHFT
                 // Row 3
                 &none &none &none &none &none
                 &none &kp C_PREV &kp C_PP &kp C_NEXT &none
