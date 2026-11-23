@@ -189,7 +189,7 @@
                 &as FSLH &as DLLR &as HASH &as LDQT &as LSQT
                 // Row 4
                 &trans &trans
-                &mo LAYER_RAT &trans
+                &trans &trans
             >;
         };
 
@@ -206,7 +206,7 @@
                 &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &kp LG(LS(LA(V)))
                 &kp PG_DN &kp END &kp HOME &kp PG_UP &none
                 // Row 4
-                &trans &mo LAYER_RAT
+                &trans &trans
                 &trans &trans
             >;
         };
