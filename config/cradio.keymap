@@ -349,22 +349,14 @@
             layers = <LAYER_ABC LAYER_SYM>;
         };
 
-        // Grave (abc), Space (sym)
-        combo_grave {
-            timeout-ms = <50>;
-            slow-release;
-            key-positions = <21 22 23>;
-            bindings = <&as GRAVE>;
-            layers = <LAYER_ABC>;
-        };
+        // Space
         combo_space_left {
             timeout-ms = <50>;
             slow-release;
             key-positions = <21 22 23>;
             bindings = <&kp SPACE>;
-            layers = <LAYER_SYM>;
+            layers = <LAYER_ABC LAYER_SYM>;
         };
-        // Space
         combo_space_right {
             timeout-ms = <50>;
             slow-release;
@@ -395,6 +387,13 @@
             slow-release;
             key-positions = <2 3>;
             bindings = <&as COLON>;
+            layers = <LAYER_ABC>;
+        };
+        combo_ldquote {
+            timeout-ms = <50>;
+            slow-release;
+            key-positions = <3 4>;
+            bindings = <&as LDQT>;
             layers = <LAYER_ABC>;
         };
         combo_star {
@@ -432,6 +431,13 @@
             bindings = <&as DQT>;
             layers = <LAYER_ABC>;
         };
+        combo_grave {
+            timeout-ms = <50>;
+            slow-release;
+            key-positions = <13 14>;
+            bindings = <&as GRAVE>;
+            layers = <LAYER_ABC>;
+        };
         combo_lbracket {
             timeout-ms = <50>;
             slow-release;
@@ -465,6 +471,13 @@
             slow-release;
             key-positions = <22 23>;
             bindings = <&as EQUAL>;
+            layers = <LAYER_ABC>;
+        };
+        combo_lsquote {
+            timeout-ms = <50>;
+            slow-release;
+            key-positions = <23 24>;
+            bindings = <&as LSQT>;
             layers = <LAYER_ABC>;
         };
         combo_slash {
