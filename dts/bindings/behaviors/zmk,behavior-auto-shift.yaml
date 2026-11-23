@@ -1,0 +1,12 @@
+description: Auto Shift with physical hold-tap timing and shared Shift overrides
+compatible: "zmk,behavior-auto-shift"
+include: one_param.yaml
+
+properties:
+  tapping-term-ms:
+    type: int
+    default: 175
+  overrides:
+    type: array
+    required: true
+    description: Pairs of unshifted and shifted encoded keycodes

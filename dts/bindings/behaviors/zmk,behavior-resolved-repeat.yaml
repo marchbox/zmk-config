@@ -1,0 +1,3 @@
+description: Repeat the last resolved key and its effective modifiers
+compatible: "zmk,behavior-resolved-repeat"
+include: zero_param.yaml
