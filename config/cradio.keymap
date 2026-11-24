@@ -326,13 +326,5 @@
         MAKE_COMBO(combo_slash,    25 26,  &as FSLH,  LAYER_ABC LAYER_SYM)
         MAKE_COMBO(combo_lbrace,   26 27,  &as LBRC,  LAYER_ABC LAYER_SYM)
         MAKE_COMBO(combo_hash,     28 29,  &as HASH,  LAYER_ABC LAYER_SYM)
-
-        // Navigation
-        MAKE_COMBO(combo_end,    1 3,   &kp END,   LAYER_ABC LAYER_SYM)
-        MAKE_COMBO(combo_home,   6 8,   &kp HOME,  LAYER_ABC LAYER_SYM)
-        MAKE_COMBO(combo_left,  11 13,  &kp LEFT,  LAYER_ABC LAYER_SYM)
-        MAKE_COMBO(combo_up,    16 18,  &kp UP,    LAYER_ABC LAYER_SYM)
-        MAKE_COMBO(combo_right, 21 23,  &kp RIGHT, LAYER_ABC LAYER_SYM)
-        MAKE_COMBO(combo_down,  26 28,  &kp DOWN,  LAYER_ABC LAYER_SYM)
     };
 };
