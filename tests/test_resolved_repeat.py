@@ -30,6 +30,8 @@ STUBS = r"""
 #define LS(key) ((key) | ((uint32_t)MOD_LSFT << 24))
 #define RS(key) ((key) | ((uint32_t)MOD_RSFT << 24))
 #define LC(key) ((key) | 0x01000000u)
+#define LA(key) ((key) | 0x04000000u)
+#define LG(key) ((key) | 0x08000000u)
 #define LEFT ZMK_HID_USAGE(7, 0x50)
 #define RIGHT ZMK_HID_USAGE(7, 0x4F)
 #define UP ZMK_HID_USAGE(7, 0x52)
@@ -37,6 +39,9 @@ STUBS = r"""
 #define J ZMK_HID_USAGE(7, 0x0D)
 #define K ZMK_HID_USAGE(7, 0x0E)
 #define A ZMK_HID_USAGE(7, 0x04)
+#define C ZMK_HID_USAGE(7, 0x06)
+#define V ZMK_HID_USAGE(7, 0x19)
+#define X ZMK_HID_USAGE(7, 0x1B)
 
 struct device { const void *config; void *data; };
 struct zmk_behavior_binding { const char *behavior_dev; };
@@ -71,6 +76,7 @@ HARNESS = r"""
 
 static const uint32_t alternates[] = {
     LEFT, RIGHT, RIGHT, LEFT, UP, DOWN, DOWN, UP, LS(J), LS(K), LS(K), LS(J),
+    LG(C), LG(LS(LA(V))), LG(X), LG(LS(LA(V))),
 };
 static const struct resolved_repeat_config normal_config;
 static const struct resolved_repeat_config alternate_config = {
@@ -100,13 +106,15 @@ static int raise_zmk_keycode_state_changed_from_encoded(uint32_t key, bool press
     return 0;
 }
 
-static void remember(uint32_t key) {
+static void send_key_state(uint32_t key, bool pressed) {
     struct zmk_keycode_state_changed input = {
-        .usage_page = (key >> 16) & 0xFF, .keycode = key & 0xFFFF, .state = true,
+        .usage_page = (key >> 16) & 0xFF, .keycode = key & 0xFFFF, .state = pressed,
     };
     report.body.modifiers = SELECT_MODS(key);
     resolved_repeat_listener(&input);
 }
+
+static void remember(uint32_t key) { send_key_state(key, true); }
 
 static void tap(struct zmk_behavior_binding *binding, uint32_t expected) {
     size_t before = output_count;
@@ -153,6 +161,28 @@ int main(void) {
     remember(ZMK_HID_USAGE(12, 0xE9));
     tap(&normal, ZMK_HID_USAGE(12, 0xE9));
     tap(&alt, 0);
+
+    // Copy/cut survive modifier changes and non-keyboard/non-consumer input.
+    // ZMK layer switches and mouse actions do not emit keycode events at all.
+    const uint32_t clipboard_keys[] = {LG(C), LG(X)};
+    for (size_t i = 0; i < ARRAY_SIZE(clipboard_keys); i++) {
+        output_count = 0;
+        remember(clipboard_keys[i]);
+        send_key_state(clipboard_keys[i] & 0x00FFFFFF, false);
+        for (uint32_t modifier = 0xE0; modifier <= 0xE7; modifier++) {
+            send_key_state(ZMK_HID_USAGE(7, modifier), true);
+            send_key_state(ZMK_HID_USAGE(7, modifier), false);
+        }
+        remember(ZMK_HID_USAGE(1, 0x30));
+        remember(ZMK_HID_USAGE(1, 0x38));
+        remember(ZMK_HID_USAGE(9, 1));
+        report.body.modifiers = 0;
+        tap(&alt, LG(LS(LA(V))));
+        tap(&alt, LG(LS(LA(V))));
+        tap(&normal, clipboard_keys[i]);
+        remember(A);
+        tap(&alt, 0);
+    }
 
     // Both repeat keys can be held, and each releases its own press-time key.
     output_count = 0;
