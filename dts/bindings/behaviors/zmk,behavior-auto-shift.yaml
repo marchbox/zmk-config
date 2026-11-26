@@ -6,6 +6,10 @@ properties:
   tapping-term-ms:
     type: int
     default: 175
+  overrides-layer:
+    type: int
+    default: -1
+    description: Highest active layer on key press where overrides apply (-1 for all layers)
   overrides:
     type: array
     required: true

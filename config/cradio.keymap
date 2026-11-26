@@ -85,11 +85,12 @@
 
 / {
     behaviors {
-        // Auto Shift and physical Shift share the same override table.
+        // Custom Shift overrides apply only on abc; other layers use normal Shift.
         as: auto_shift {
             compatible = "zmk,behavior-auto-shift";
             #binding-cells = <1>;
             tapping-term-ms = <175>;
+            overrides-layer = <LAYER_ABC>;
             overrides = <
                 COMMA QMARK
                 DOT   EXCL
@@ -190,14 +191,14 @@
             display-name = "sym";
             bindings = <
                 // Row 1
-                &as N1 &as N2 &as N3 &as N4 &as N5
-                &as N6 &as N7 &as N8 &as N9 &as N0
+                &none &none &none &none &none
+                &none &as SEMI &as LBKT &as RBKT &as BSLH
                 // Row 2
-                SHRML(PRCNT, MINUS, EQUAL, DQT) &as COLON
-                &as SEMI SHRMR(LPAR, LBRC, LBKT, LT)
+                SHRML(N1, N2, N3, N4) &as N5
+                &as N6 SHRMR(N7, N8, N9, N0)
                 // Row 3
-                &as STAR &as PIPE &as AMPS &as EXCL &as GRAVE
-                &as FSLH &as DLLR &as HASH &as LDQT &as LSQT
+                &none &as MINUS &as EQUAL &as GRAVE &none
+                &none &as SQT &as DOT &as COMMA &as FSLH
                 // Row 4
                 &trans &trans
                 &trans &trans

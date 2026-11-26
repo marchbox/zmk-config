@@ -12,6 +12,7 @@
 #include <zmk/events/keycode_state_changed.h>
 #include <zmk/events/position_state_changed.h>
 #include <zmk/hid.h>
+#include <zmk/keymap.h>
 #include <zmk/matrix.h>
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
@@ -20,6 +21,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 struct auto_shift_config {
     int tapping_term_ms;
+    int overrides_layer;
     size_t overrides_len;
     const uint32_t *overrides;
 };
@@ -46,10 +48,15 @@ static struct {
     const struct auto_shift_config *config;
     struct zmk_behavior_binding_event event;
     uint32_t keycode;
+    uint32_t shifted_keycode;
     bool active;
 } pending;
 
 static uint32_t shifted_key(const struct auto_shift_config *config, uint32_t keycode) {
+    if (config->overrides_layer >= 0 &&
+        zmk_keymap_highest_layer_active() != config->overrides_layer) {
+        return LS(keycode);
+    }
     for (size_t i = 0; i < config->overrides_len; i += 2) {
         if (config->overrides[i] == keycode) {
             return config->overrides[i + 1];
@@ -80,7 +87,7 @@ static int finish_pending(int64_t timestamp) {
     pending.active = false;
     k_work_cancel_delayable(&shift_work);
     bool shifted = timestamp - pending.event.timestamp >= pending.config->tapping_term_ms;
-    uint32_t keycode = shifted ? shifted_key(pending.config, pending.keycode) : pending.keycode;
+    uint32_t keycode = shifted ? pending.shifted_keycode : pending.keycode;
     return emit_tap(keycode, shifted, pending.event.timestamp);
 }
 
@@ -120,6 +127,8 @@ static int auto_shift_pressed(struct zmk_behavior_binding *binding,
     }
     pending.event = event;
     pending.keycode = binding->param1;
+    // Keep the press-time layer's output even if the layer changes before resolution.
+    pending.shifted_keycode = shifted_key(config, binding->param1);
     pending.active = true;
 
     // Hold-tap supplies the original press timestamp even on a retro-tap release.
@@ -216,6 +225,7 @@ BUILD_ASSERT(DT_NUM_INST_STATUS_OKAY(DT_DRV_COMPAT) == 1,
     static const uint32_t overrides_##n[] = DT_INST_PROP(n, overrides);                            \
     static const struct auto_shift_config config_##n = {                                           \
         .tapping_term_ms = DT_INST_PROP(n, tapping_term_ms),                                       \
+        .overrides_layer = DT_INST_PROP(n, overrides_layer),                                       \
         .overrides_len = ARRAY_SIZE(overrides_##n),                                                \
         .overrides = overrides_##n,                                                                \
     };                                                                                             \
