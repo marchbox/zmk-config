@@ -1,11 +1,6 @@
-import os
-from pathlib import Path
-import subprocess
-import tempfile
 import unittest
 
-
-ROOT = Path(__file__).resolve().parents[1]
+from host_behavior import run_behavior_test
 
 STUBS = r"""
 #pragma once
@@ -184,30 +179,7 @@ class AutoShiftTests(unittest.TestCase):
             "zmk/keymap.h",
             "zmk/matrix.h",
         )
-        with tempfile.TemporaryDirectory() as directory:
-            temp = Path(directory)
-            (temp / "stubs.h").write_text(STUBS)
-            for header in headers:
-                path = temp / header
-                path.parent.mkdir(parents=True, exist_ok=True)
-                path.write_text('#include "stubs.h"\n')
-            harness = temp / "test.c"
-            harness.write_text(HARNESS)
-            executable = temp / "test"
-            subprocess.run(
-                [
-                    os.environ.get("CC", "cc"),
-                    "-std=c11",
-                    "-Werror=implicit-function-declaration",
-                    f"-I{temp}",
-                    f"-I{ROOT / 'src'}",
-                    str(harness),
-                    "-o",
-                    str(executable),
-                ],
-                check=True,
-            )
-            subprocess.run([str(executable)], check=True)
+        run_behavior_test(STUBS, HARNESS, headers)
 
 
 if __name__ == "__main__":

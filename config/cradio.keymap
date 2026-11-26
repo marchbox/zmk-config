@@ -116,6 +116,22 @@
             #binding-cells = <0>;
         };
 
+        alt_repeat: alternate_repeat {
+            compatible = "zmk,behavior-resolved-repeat";
+            #binding-cells = <0>;
+            alternate;
+            alternates = <
+                LEFT  RIGHT
+                RIGHT LEFT
+                UP    DOWN
+                DOWN  UP
+                LS(J) LS(K)
+                LS(K) LS(J)
+                LG(C) LG(LS(LA(V)))
+                LG(X) LG(LS(LA(V)))
+            >;
+        };
+
         // Tap dance: screenshot
         // Tap: Cmd+Ctrl+Shift+4 (screenshot to clipboard)
         // Double-tap: Cmd+Shift+5 (screenshot options)
@@ -182,7 +198,7 @@
                 &as Z &as X &as C &as D &as V
                 &as K &as H &as COMMA &as DOT &as RSQT
                 // Row 4
-                &sk LSHFT &lt LAYER_SYM SPACE
+                &alt_repeat &lt LAYER_SYM SPACE
                 &lt LAYER_NAV BSPC &repeat
             >;
         };

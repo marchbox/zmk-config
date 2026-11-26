@@ -1,3 +1,17 @@
 description: Repeat the last resolved key and its effective modifiers
 compatible: "zmk,behavior-resolved-repeat"
 include: zero_param.yaml
+
+properties:
+  alternate:
+    type: boolean
+    description: Use the alternates table instead of repeating the original key
+  alternates:
+    type: array
+    default: []
+    description: |
+      Directional source/alternate encoded keycode pairs, matched in list order.
+      Source modifiers must be present; other modifiers are preserved.
+      Left and right Shift are interchangeable when matching.
+      Put modifier-specific entries before unmodified entries for the same key.
+      Unmapped keys do nothing. Repeats do not replace the remembered original key.
