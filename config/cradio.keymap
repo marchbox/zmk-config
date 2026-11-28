@@ -214,7 +214,7 @@
                 &as N6 SHRMR(N7, N8, N9, N0)
                 // Row 3
                 &none &as MINUS &as EQUAL &as GRAVE &none
-                &none &as SQT &as DOT &as COMMA &as FSLH
+                &none &as SQT &as COMMA &as DOT &as FSLH
                 // Row 4
                 &trans &trans
                 &trans &trans
